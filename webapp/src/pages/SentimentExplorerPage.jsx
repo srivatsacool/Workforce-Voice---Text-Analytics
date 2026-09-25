@@ -46,8 +46,8 @@ export default function SentimentExplorerPage() {
       ratingText: '1 - 2 Stars',
       sentimentText: 'Negative Text (Compound ≤ -0.05)',
       sharePct: '10.8%',
-      desc: 'Severe numerical ratings accompanied by sharply critical commentary detailing toxic supervisory practices or burnout.',
-      implication: 'Immediate intervention required: frontline supervisory audits, skip-level checks, and safety/scheduling remediation.'
+      desc: 'Severe numerical ratings accompanied by sharply critical commentary detailing supervisory friction, scheduling pressure, or operational strain.',
+      implication: 'Suggested area for organizational investigation: frontline supervisory audits, skip-level check-ins, and shift scheduling review.'
     },
     {
       id: 'divergent_high_neg',
@@ -56,8 +56,8 @@ export default function SentimentExplorerPage() {
       color: '#F59E0B',
       ratingText: '4 - 5 Stars',
       sentimentText: 'Negative Text (Compound ≤ -0.05)',
-      sharePct: '4.2%',
-      desc: 'Employees award high overall ratings out of institutional loyalty or strong compensation, but detail acute operational pain in the text.',
+      sharePct: '8.2% of 5-star reviews',
+      desc: 'Employees award high overall ratings out of institutional loyalty or strong compensation, but articulate acute operational friction in the text.',
       implication: 'High-risk blindspot for leadership: high star ratings conceal brewing operational burnout.'
     },
     {
@@ -67,9 +67,9 @@ export default function SentimentExplorerPage() {
       color: '#6366F1',
       ratingText: '1 - 2 Stars',
       sentimentText: 'Positive Text (Compound ≥ +0.05)',
-      sharePct: '7.2%',
-      desc: 'Severely dissatisfied employees who nevertheless soften their critique with polite language ("Good snacks, great peers, but unbearable pay").',
-      implication: 'Highlights that low ratings are not purely irrational venting; employees often separate good colleagues from bad governance.'
+      sharePct: '38.4% of 1-star reviews',
+      desc: 'Dissatisfied employees who nevertheless soften their critique with polite language ("Good snacks, great peers, but severe pay disparity").',
+      implication: 'Demonstrates that low ratings are not purely irrational venting; employees frequently distinguish collegial peers from organizational governance.'
     }
   ];
 
@@ -86,7 +86,7 @@ export default function SentimentExplorerPage() {
           Workforce Sentiment & Rating Divergence
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">
-          Investigating the relationship between how employees numerically rate their company and how they emotionally articulate their experience in text.
+          Investigating the relationship between how employees numerically rate their company and how they express their experience in unstructured text.
         </p>
       </div>
 
@@ -108,6 +108,64 @@ export default function SentimentExplorerPage() {
           <div className="text-xs text-slate-400 font-medium">Full Review Net Compound</div>
           <div className="text-2xl font-bold text-blue-400 font-heading mt-1">+0.48</div>
           <div className="text-[11px] text-slate-500 mt-0.5">Median: +0.62 (Moderate positive lean)</div>
+        </div>
+      </div>
+
+      {/* Rating vs Sentiment Stacked Distribution */}
+      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+          <div>
+            <h2 className="text-base font-bold text-white font-heading">
+              Sentiment Distribution Across Numerical Star Ratings
+            </h2>
+            <p className="text-xs text-slate-400">
+              Examining empirical text sentiment across 1 to 5 star reviews reveals significant rating-text divergence.
+            </p>
+          </div>
+          <span className="text-[11px] font-mono text-amber-400 bg-amber-500/10 px-2 py-0.5 rounded border border-amber-500/20 self-start sm:self-auto">
+            Divergent Voice Evidence
+          </span>
+        </div>
+
+        <div className="h-60 w-full pt-2">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={ratingSentimentData}
+              layout="vertical"
+              margin={{ top: 10, right: 30, left: 20, bottom: 5 }}
+            >
+              <XAxis type="number" unit="%" stroke="#64748b" fontSize={11} domain={[0, 100]} />
+              <YAxis 
+                type="category" 
+                dataKey="ratingOverall" 
+                stroke="#cbd5e1" 
+                fontSize={12}
+                tickFormatter={(val) => `${val} Star`}
+              />
+              <Tooltip
+                formatter={(val, name) => [`${typeof val === 'number' ? val.toFixed(1) : val}%`, name]}
+                contentStyle={{ backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '8px', fontSize: '12px' }}
+              />
+              <Bar dataKey="Positive" stackId="a" fill="#10B981" radius={[0, 0, 0, 0]} name="Positive Text" />
+              <Bar dataKey="Neutral" stackId="a" fill="#64748B" radius={[0, 0, 0, 0]} name="Neutral Text" />
+              <Bar dataKey="Negative" stackId="a" fill="#EF4444" radius={[0, 4, 4, 0]} name="Negative Text" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2">
+          <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 text-xs">
+            <span className="text-amber-400 font-semibold font-mono">38.4% of 1-Star Reviews </span>
+            <span className="text-slate-300">
+              contain net-positive text, as employees soften harsh ratings with praise for teammates ("Great coworkers, but severe scheduling friction").
+            </span>
+          </div>
+          <div className="p-3 rounded-xl bg-slate-950/70 border border-slate-800/80 text-xs">
+            <span className="text-amber-400 font-semibold font-mono">8.2% of 5-Star Reviews </span>
+            <span className="text-slate-300">
+              contain net-negative text, where operational pain points and burnout are concealed behind institutional loyalty or strong compensation.
+            </span>
+          </div>
         </div>
       </div>
 
@@ -138,7 +196,7 @@ export default function SentimentExplorerPage() {
                 >
                   {quad.badge}
                 </span>
-                <span className="text-sm font-bold text-white font-heading">{quad.sharePct} of reviews</span>
+                <span className="text-sm font-bold text-white font-heading">{quad.sharePct}</span>
               </div>
 
               <h3 className="text-base font-bold text-white font-heading">
@@ -167,23 +225,42 @@ export default function SentimentExplorerPage() {
         </div>
       </div>
 
-      {/* ML Lexical Drivers: TF-IDF Coefficients */}
-      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4">
+      {/* ML Lexical Drivers: TF-IDF Coefficients & Model Performance */}
+      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-5">
         <div>
-          <div className="flex items-center justify-between">
-            <h2 className="text-base font-bold text-white font-heading">
-              Machine Learning Feature Importance: Key Lexical Drivers
-            </h2>
-            <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
-              82.4% Test Accuracy
-            </span>
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+            <div>
+              <h2 className="text-base font-bold text-white font-heading">
+                Machine Learning Classification & Feature Importance
+              </h2>
+              <p className="text-xs text-slate-400 mt-0.5">
+                Supervised sentiment classification predicting high satisfaction (4–5 stars) vs. low satisfaction (1–2 stars).
+              </p>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+                82.4% Validation Accuracy
+              </span>
+              <span className="text-xs font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20">
+                79.8% Negative Recall
+              </span>
+            </div>
           </div>
-          <p className="text-xs text-slate-400 mt-1">
-            Strongest positive and negative lexical weights learned by the balanced Logistic Regression classifier.
+        </div>
+
+        {/* Model Performance & Class Imbalance Callout */}
+        <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2">
+          <div className="flex items-center gap-2 text-xs font-bold text-slate-200">
+            <Scale className="w-4 h-4 text-blue-400" />
+            <span>Class Imbalance Mitigation: Why 79.8% Negative Recall Matters</span>
+          </div>
+          <p className="text-xs text-slate-300 leading-relaxed">
+            The classifier achieved <strong>82.4% validation accuracy with 79.8% recall for the negative class</strong> (macro F1 of 0.777 across 1,293 validation samples). In employee review corpora, positive reviews outnumber negative reviews approximately <strong>3:1</strong>. A naive standard classifier achieves apparent high accuracy by defaulting to positive predictions, causing negative review recall to collapse to ~38%. By applying balanced inverse class weighting, our model accurately captures 79.8% of acute friction signals while maintaining robust overall accuracy.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Lexical Drivers Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 pt-1">
           
           {/* Negative Terms */}
           <div className="space-y-2">

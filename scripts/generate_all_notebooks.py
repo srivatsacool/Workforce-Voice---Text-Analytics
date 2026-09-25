@@ -1577,23 +1577,29 @@ By analyzing unsolicited, employee-generated text alongside numerical evaluation
 
 ### 3. Key Workforce Signals
 
-#### 🔹 Signal 1: The Asymmetry of Frontline Management
-- **OBSERVATION:** Reviews centered on First-Line Management & Internal Communication carry the lowest average rating (2.7 stars) and the highest negative sentiment concentration (38%). Furthermore, `poor`, `terrible`, `toxic`, `management`, and `lack` are the top negative coefficient terms in our ML classifier.
-- **INTERPRETATION:** Individual supervisory competence is the single largest determinant of negative employee sentiment. While corporate perks and benefits attract talent, localized management failure drives dissatisfaction.
-- **IMPLICATION:** Executive leadership should prioritize frontline manager coaching, transparent two-way communication channels, and skip-level review mechanisms rather than relying solely on enterprise-wide benefit enhancements.
-- **LIMITATION:** Frustrated employees often hold first-line supervisors accountable for broader corporate policies (e.g. staffing shortages, compensation caps) that supervisors do not control.
+#### 🔹 Signal 1: The Frontline Supervisory & Communication Friction Signal
+- **OBSERVATION:** Topic 3 (Management Quality & Communication) and Topic 5 (Operational Stress & Shifts) exhibit the lowest average ratings across all discovered themes (3.01 and 2.98 stars, respectively) and the highest negative sentiment concentrations (25.7% and 29.2%). Furthermore, terms such as `poor` (-5.09), `terrible` (-4.00), `toxic` (-3.69), and `management` (-3.07) are the strongest negative predictive coefficients in our trained classifier.
+- **INTERPRETATION:** Management Quality & Communication shows the strongest observed friction signal in the dataset. Rather than isolated complaints, supervisory and communication breakdowns form a recurring lexical pattern when employees express acute dissatisfaction.
+- **IMPLICATION:** Executive leadership should prioritize frontline manager coaching, transparent two-way communication channels, and skip-level review mechanisms as targeted areas for operational attention.
+- **LIMITATION:** Frustrated employees often hold first-line supervisors accountable for broader corporate constraints (such as understaffing, rigid attendance software, or corporate wage ceilings) that local supervisors cannot unilaterally control. This signal reflects perceived friction, not an objective audit of individual manager competence.
 
-#### 🔹 Signal 2: The "Divergent Voice" Phenomenon
-- **OBSERVATION:** 38.4% of 1-star reviews contain net-positive textual sentiment, and 8.2% of 5-star reviews contain net-negative textual sentiment.
-- **INTERPRETATION:** Star ratings capture emotional bottom-lines, but text reveals actionable nuance. Highly rated companies harbor hidden operational friction, while severely rated companies frequently possess strong interpersonal cultures.
-- **IMPLICATION:** People Analytics teams must not rely exclusively on Net Promoter Scores (eNPS) or numerical ratings. Unstructured text analysis is essential to uncover hidden friction.
-- **LIMITATION:** Rule-based sentiment engines occasionally misinterpret polite phrasing or sarcastic commentary as positive valence.
+#### 🔹 Signal 2: The Rating–Text "Divergent Voice" Phenomenon
+- **OBSERVATION:** In our cross-tabulation of ratings and sentiment, 38.4% of 1-star reviews contain net-positive textual sentiment, and 8.2% of 5-star reviews contain net-negative textual commentary.
+- **INTERPRETATION:** Star ratings collapse multi-dimensional employee experience into a scalar metric, obscuring actionable nuance. Low-rating reviews often preserve genuine appreciation for peer camaraderie, while high ratings can conceal brewing operational burnout.
+- **IMPLICATION:** People Analytics teams must not rely exclusively on Net Promoter Scores (eNPS) or numerical ratings. Integrating NLP-driven text mining with structured metrics reveals hidden friction and constructive dissent that standard scorecards miss.
+- **LIMITATION:** Rule-based sentiment engines occasionally misinterpret polite phrasing or sarcastic commentary as positive valence. Text analysis should be triangulated with qualitative focus groups and internal feedback channels.
 
-#### 🔹 Signal 3: Organizational Archetypes and Distinct Friction Points
+#### 🔹 Signal 3: Organizational Archetypes and Distinct Friction Profiles
 - **OBSERVATION:** Frontline retail/service employers over-index on compensation and scheduling friction (>45% of reviews), whereas technology firms over-index on operational pace, restructuring, and organizational shifts (>35% of reviews).
-- **INTERPRETATION:** Talent strategies cannot be copied across industries. What retains a tech engineer (autonomy, strategic clarity, career trajectory) differs fundamentally from what retains a retail store associate (shift predictability, fair hourly wages, safe staffing levels).
+- **INTERPRETATION:** Talent strategies cannot be copied across industries. What engages knowledge workers (autonomy, strategic clarity, career velocity) differs fundamentally from frontline hourly workers (shift predictability, fair hourly wages, safe staffing levels).
 - **IMPLICATION:** Tailor workforce interventions to industry-specific operational realities rather than generic corporate HR playbooks.
-- **LIMITATION:** Review sample sizes per employer (~100 reviews) capture broad thematic footprints rather than exhaustive departmental censuses.
+- **LIMITATION:** Scraped employer review samples (~100 reviews per company) provide a cross-sectional thematic profile rather than an exhaustive enterprise-wide workforce census.
+
+#### 🔹 Signal 4: Workplace Culture & Camaraderie as a Resilient Positive Signal
+- **OBSERVATION:** Topic 1 (Workplace Culture & Camaraderie) and Topic 4 (Career Growth & Learning) exhibit the highest average ratings (3.94 and 3.74 stars) and the highest positive sentiment shares (84.6% and 86.9%) in the dataset. Pros text across all 90 employers shows a mean compound sentiment of +0.65.
+- **INTERPRETATION:** Workplace Culture & Camaraderie shows the strongest positive workforce signal in this dataset, suggesting an area for further organizational investigation. Supportive peer relationships and collaborative team dynamics are consistently associated with higher employee sentiment.
+- **IMPLICATION:** Protecting supportive team collaboration, onboarding rituals, and peer recognition networks serves as an essential organizational anchor, especially during operational restructuring or compensation friction.
+- **LIMITATION:** Strong peer camaraderie can coexist with operational inefficiency, intense workload stress, or low compensation. High peer sentiment should not be interpreted as evidence of operational perfection or proof that turnover will not occur.
 
 ---
 
@@ -1601,17 +1607,17 @@ By analyzing unsolicited, employee-generated text alongside numerical evaluation
 
 | Priority Tier | Thematic Focus | Observed Indicator | Strategic Action |
 | :--- | :--- | :--- | :--- |
-| **P1: Immediate Operational Attention** | First-Line Supervisory Quality | Management topic accounts for 38% negative sentiment share. | Implement mandatory manager enablement, feedback loops, and leadership audit. |
-| **P2: High-Leverage Retention Anchor** | Shift Predictability & Work-Life Balance | Scheduling is the #2 topic in hourly workforce segments. | Review scheduling software algorithms; ensure minimum advance notice for shifts. |
-| **P3: Strategic Culture Anchor** | Workplace Culture & Team Camaraderie | Highest positive sentiment (91%) across all discovered topics. | Protect team collaboration rituals; reinforce collegial workplace norms. |
-| **P4: Transparency & Communication** | Reorganization & Operational Pace | Tech sector over-indexes on restructuring anxiety. | Increase executive communication transparency during organizational shifts. |
+| **P1: Immediate Operational Attention** | First-Line Supervisory Quality & Coaching | Management & Operational Stress topics show lowest ratings (~3.0⭐) and highest negative sentiment (~26-29%). | Implement targeted supervisory coaching, skip-level check-ins, and feedback loops. |
+| **P2: High-Leverage Frontline Anchor** | Shift Predictability & Schedule Control | Scheduling is the primary grievance topic in hourly retail and food service workforces. | Evaluate advance scheduling notice practices and review automated shift allocation parameters. |
+| **P3: Strategic Culture Protection** | Peer Camaraderie & Team Culture | 84.6% positive sentiment in Topic 1 across all 90 covered organizations. | Protect collaborative team rituals and recognize peer mentorship and community anchors. |
+| **P4: Strategic Communication** | Restructuring Transparency & Pace | Knowledge-work reviews heavily reflect restructuring anxiety and organizational shifts. | Increase executive town hall candor and provide clear strategic roadmaps during operational transitions. |
 
 ---
 
-### 5. Methodological Limitations
-1. **Self-Selection Bias:** Voluntary public reviews over-represent employees with acute experiences (highly enthusiastic or highly aggrieved).
-2. **Temporal Clustering:** 96% of reviews are concentrated in recent collection periods (2026), limiting multi-year longitudinal trend detection.
-3. **Correlation vs. Causation:** Sentiment and topic patterns reflect subjective workforce perceptions, not verified operational productivity or audited business performance.
+### 5. Methodological Limitations & Governance
+1. **Self-Selection Bias:** Voluntary public reviews over-represent employees with acute experiences (highly enthusiastic or highly aggrieved). The corpus does not represent a randomized census of total workforce headcount.
+2. **Temporal Clustering:** 96.9% of reviews are concentrated in the recent 2026 collection cycle, limiting multi-year longitudinal trend detection. Findings represent a contemporary cross-sectional snapshot.
+3. **Correlation vs. Causation:** Sentiment and topic patterns reflect subjective workforce perceptions and qualitative signals, not verified operational productivity, audited financial throughput, or causal turnover drivers.
 
 ---
 

@@ -203,7 +203,7 @@ export default function LandingPage({ setActiveTab }) {
               Detecting Retention Anchors
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Peer camaraderie and workplace psychological safety (Topic 1) represent the single most resilient culture asset across all 90 employers (91.4% positive sentiment), acting as the primary buffer against workplace turnover.
+              Workplace Culture & Camaraderie (Topic 1) shows the strongest positive workforce signal in this dataset (91.4% positive sentiment), suggesting an area for further organizational investigation into how peer support frequently associates with positive workforce experience.
             </p>
           </div>
 

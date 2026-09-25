@@ -27,6 +27,12 @@ This platform is positioned strictly around **Workforce Signals + Organizational
 * **No Unsupported Claims:** We explicitly reject claims that reviews directly measure operational productivity, prove management competence, or causally dictate employee turnover.
 * **Triangulation:** Public review data is designed to be triangulated with internal retention audits, stay interviews, and HRIS operational metrics.
 
+### 📋 Resume & Portfolio Formulation (3-Bullet Impact Summary)
+
+* **Workforce Intelligence Pipeline:** Built an end-to-end Workforce Intelligence Analytics pipeline analyzing 8,785 employee reviews across 90 US employers using NLP, machine learning (TF-IDF + Balanced Logistic Regression, 82.4% validation accuracy, 79.8% negative recall), and unsupervised LDA topic modeling ($k=6$) to identify recurring organizational themes and operational friction areas.
+* **Rating–Text Divergence (Divergent Voice):** Uncovered critical rating–text divergence where 38.4% of 1-star reviews contained net-positive sentiment (collegial buffering) and 8.2% of 5-star reviews contained net-negative text, demonstrating that scalar scores conceal acute operational and supervisory friction.
+* **Production Static Web Platform:** Engineered an interactive, static React 19 / Vite 8 executive web application deployed to Cloudflare Pages featuring cross-dimensional filtering, workforce signal matrices, code-split route lazy loading, and decision-ready governance frameworks ($\text{Observation} \to \text{Interpretation} \to \text{Implication} \to \text{Caution}$).
+
 ---
 
 ## 🗺️ System Architecture
@@ -182,19 +188,19 @@ workforce-intelligence/
 ### 4. Unsupervised Topic Modeling (LDA, k=6)
 Latent Dirichlet Allocation revealed 6 natural, statistically separated organizational themes:
 
-| Topic Code | Discovered Workforce Theme | Prevalence Share | Avg Rating | Avg Sentiment | Dominant Empirical Keywords |
-| :---: | :--- | :---: | :---: | :---: | :--- |
-| **T0** | Compensation & Hourly Pay Dynamics | 14.8% | 3.25⭐ | +0.44 | `pay`, `salary`, `hour`, `food`, `free`, `minimum`, `customer`, `store` |
-| **T1** | Workplace Culture & Camaraderie | 20.4% | 4.01⭐ | +0.62 | `culture`, `team`, `environment`, `supportive`, `friendly`, `inclusive`, `fun` |
-| **T2** | Work-Life Balance & Scheduling | 16.9% | 3.51⭐ | +0.48 | `balance`, `life`, `flexible`, `hour`, `schedule`, `shift`, `long`, `time` |
-| **T3** | Management Quality & Communication | 18.2% | 2.72⭐ | +0.28 | `management`, `manager`, `poor`, `leadership`, `communication`, `lack`, `toxic` |
-| **T4** | Career Growth & Learning Opportunities | 15.6% | 3.68⭐ | +0.54 | `growth`, `opportunity`, `career`, `learn`, `promotion`, `slow`, `skill` |
-| **T5** | Operational Pace, Stress & Shifts | 14.1% | 3.32⭐ | +0.38 | `fast`, `paced`, `stress`, `layoff`, `change`, `high`, `turnover`, `pressure` |
+| Topic Code | Discovered Workforce Theme | Prevalence Share | Reviews | Avg Rating | Avg Sentiment | Dominant Empirical Keywords |
+| :---: | :--- | :---: | :---: | :---: | :---: | :--- |
+| **T0** | Compensation & Hourly Pay Dynamics | 15.4% | 1,353 | 3.69⭐ | +0.48 | `environment`, `pay`, `customer`, `coworkers`, `fun`, `friendly`, `management` |
+| **T1** | Workplace Culture & Camaraderie | 20.0% | 1,755 | 3.94⭐ | +0.59 | `life`, `balance`, `benefit`, `culture`, `pay`, `opportunity`, `growth` |
+| **T2** | Work-Life Balance & Scheduling | 16.7% | 1,469 | 3.56⭐ | +0.40 | `hour`, `pay`, `flexible`, `schedule`, `long`, `low`, `shift` |
+| **T3** | Management Quality & Internal Communication | 13.1% | 1,150 | 3.01⭐ | +0.38 | `manager`, `training`, `store`, `experience`, `customer`, `communication` |
+| **T4** | Career Growth & Learning Opportunities | 20.4% | 1,796 | 3.74⭐ | +0.63 | `team`, `culture`, `opportunity`, `leadership`, `project`, `learning`, `career` |
+| **T5** | Operational Pace, Stress & Organizational Shifts | 14.4% | 1,262 | 2.98⭐ | +0.30 | `management`, `poor`, `pay`, `benefit`, `toxic`, `bad`, `issue`, `lack` |
 
 ### 5. The Workforce Signal Matrix
-By cross-tabulating discovered topics against star ratings and sentiment tiers, two key organizational dynamics surface:
-1. **The Primary Cultural Anchor:** Topic 1 (Culture & Camaraderie) accounts for **74.3% of 4-5 star reviews** and **91.4% positive sentiment**. Peer relationships serve as the primary psychological cushion sustaining employee commitment across industries.
-2. **The Primary Friction Hotspot:** Topic 3 (Management Quality) accounts for **42.0% of 1-2 star reviews** and carries **38.2% negative sentiment**. Local supervisory breakdowns generate the most acute employee distress.
+By cross-tabulating discovered topics against star ratings and sentiment tiers, two key organizational signals surface:
+1. **The Primary Cultural Anchor:** Topic 1 (Culture & Camaraderie) and Topic 4 (Career Growth) exhibit the highest positive sentiment shares (**84.6% and 86.9%**) and highest average ratings (**3.94⭐ and 3.74⭐**). Supportive peer relationships represent the most consistent positive workforce signal across all 90 employers.
+2. **The Primary Friction Signals:** Topic 3 (Management Quality) and Topic 5 (Operational Stress) carry the lowest average ratings (**3.01⭐ and 2.98⭐**) and highest negative sentiment concentrations (**25.7% and 29.2%**). Supervisory communication and operational workload strain represent the primary areas for operational investigation.
 
 ---
 

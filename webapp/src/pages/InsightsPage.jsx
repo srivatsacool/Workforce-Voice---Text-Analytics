@@ -16,37 +16,41 @@ export default function InsightsPage() {
       id: 1,
       badge: 'Signal 01 • Supervisory Friction',
       badgeColor: '#EF4444',
-      title: 'The Frontline Management Quality Asymmetry',
-      observation: 'Reviews centered on Management Quality & Internal Communication have the lowest overall star rating (2.7 stars) and the highest negative sentiment concentration (38.2%). Furthermore, terms such as "poor", "terrible", "toxic", "management", and "lack" are the strongest negative predictive coefficients in our trained classifier.',
-      implication: 'Frontline supervisory competence is the primary driver of acute workplace dissatisfaction. While enterprise benefits and perks attract applicants, local management failures dictate whether employees feel supported or alienated.',
-      caution: 'Reviewers often direct grievances toward immediate managers for systemic corporate constraints (such as understaffing or strict attendance software) that local supervisors cannot unilaterally control.'
+      title: 'The Frontline Supervisory & Communication Friction Signal',
+      observation: 'In our LDA topic landscape, Topic 3 (Management Quality & Internal Communication) and Topic 5 (Operational Stress & Shifts) exhibit the lowest average ratings across all discovered themes (3.01 and 2.98 stars, respectively) and the highest negative sentiment concentrations (25.7% and 29.2%). Furthermore, terms such as "poor" (-5.09), "terrible" (-4.00), "toxic" (-3.69), and "management" (-3.07) are the strongest negative predictive coefficients in our trained classifier.',
+      interpretation: 'Management Quality & Communication shows the strongest observed friction signal in the dataset. Rather than isolated complaints, supervisory and communication breakdowns form a recurring lexical pattern when employees express acute dissatisfaction.',
+      implication: 'Leadership should prioritize frontline supervisory coaching, transparent two-way communication channels, and skip-level check-ins as targeted areas for operational attention.',
+      caution: 'Reviewers often direct grievances toward immediate managers for systemic corporate constraints (such as understaffing, rigid attendance software, or corporate wage ceilings) that local supervisors cannot unilaterally control. This signal reflects perceived friction, not an objective audit of individual manager competence.'
     },
     {
       id: 2,
       badge: 'Signal 02 • Voice vs. Metrics',
       badgeColor: '#F59E0B',
-      title: 'The "Divergent Voice" Phenomenon',
-      observation: '38.4% of 1-star reviews contain net-positive textual language, and 8.2% of 5-star reviews contain net-negative textual commentary. Numerical star ratings exhibit significant divergence from textual emotional expression.',
-      implication: 'People Analytics teams that rely solely on numerical eNPS or star ratings miss critical operational warnings. High ratings often mask brewing burnout, while low ratings often preserve genuine appreciation for peer camaraderie.',
-      caution: 'Rule-based sentiment models can misclassify polite or resigned phrasing as positive valence. Text analysis must be triangulated with qualitative focus groups.'
+      title: 'The Rating–Text "Divergent Voice" Phenomenon',
+      observation: 'In our cross-tabulation of ratings and sentiment, 38.4% of 1-star reviews contain net-positive textual sentiment, while 8.2% of 5-star reviews contain net-negative textual sentiment. Numerical star ratings frequently diverge from textual emotional valence.',
+      interpretation: 'Single-digit star ratings and aggregate eNPS scores collapse multi-dimensional employee experience into a scalar metric, obscuring critical qualitative nuance. Low-rating reviews often preserve genuine appreciation for peer camaraderie, while high ratings can conceal brewing operational burnout.',
+      implication: 'People Analytics teams must not rely solely on numerical survey scores. Integrating NLP-driven text mining with structured metrics reveals hidden friction and constructive dissent that standard scorecards miss.',
+      caution: 'Rule-based sentiment models (like VADER) can misclassify polite or resigned framing as positive valence. Textual signals should be triangulated with qualitative focus groups and internal feedback channels.'
     },
     {
       id: 3,
       badge: 'Signal 03 • Sector Archetypes',
       badgeColor: '#3B82F6',
-      title: 'Industry Archetypes Experience Divergent Friction',
-      observation: 'Retail and hourly service organizations (e.g. Walmart, McDonald\'s) over-index on Compensation (Topic 0) and Shift Scheduling (Topic 2), accounting for >45% of reviews. In contrast, Technology organizations (e.g. Google, Apple) over-index on Operational Pace, Restructuring, and Layoffs (Topic 5), accounting for >35% of reviews.',
-      implication: 'One-size-fits-all talent strategies fail. Frontline retention requires schedule predictability, wage equity, and safe staffing. Professional retention requires strategic clarity, transparent executive communication during shifts, and career pathing.',
-      caution: 'Scraped employer review samples (~100 per company) provide a cross-sectional thematic fingerprint rather than an exhaustive census of total enterprise headcount.'
+      title: 'Industry Archetypes Exhibit Distinct Friction Profiles',
+      observation: 'Retail and hourly service organizations (e.g., Walmart, McDonald\'s) over-index on Compensation (Topic 0) and Shift Scheduling (Topic 2), accounting for over 45% of thematic volume. Conversely, Technology and professional organizations (e.g., Google, Apple, Microsoft) over-index on Operational Stress & Organizational Shifts (Topic 5) and Career Development (Topic 4).',
+      interpretation: 'Different organizational archetypes face structurally distinct workforce pressures. Frontline hourly workforces experience friction around physical scheduling and wage dynamics, whereas knowledge-work workforces experience friction around organizational restructuring, workload pacing, and career velocity.',
+      implication: 'Operational interventions cannot be monolithic. Frontline workforce initiatives should focus on schedule predictability and safe staffing ratios; professional workforce initiatives should prioritize executive transparency during restructuring and clear advancement pathways.',
+      caution: 'Scraped employer review samples (~100 reviews per company) provide a cross-sectional thematic profile rather than an exhaustive enterprise-wide workforce census. Differences reflect dominant topics within submitted reviews, not absolute headcount proportions.'
     },
     {
       id: 4,
-      badge: 'Signal 04 • Resilient Retention Anchor',
+      badge: 'Signal 04 • Resilient Positive Signal',
       badgeColor: '#10B981',
-      title: 'Workplace Culture & Camaraderie as an Enduring Asset',
-      observation: 'Topic 1 (Culture & Camaraderie) achieves the highest average rating (4.01 stars) and the highest positive sentiment share (91.4%) across all discovered workforce themes. Peer support and team collegiality are the most consistently praised workplace assets across all 90 employers.',
-      implication: 'Peer relationships and collegial psychological safety serve as the primary emotional anchor keeping employees engaged during periods of compensation or leadership friction. Protecting team rituals and psychological safety directly stabilizes workforce morale.',
-      caution: 'Strong camaraderie can coexist with operational inefficiency or burnout. High team morale should not be misinterpreted as operational perfection.'
+      title: 'Workplace Culture & Camaraderie as a Resilient Positive Signal',
+      observation: 'Topic 1 (Workplace Culture & Camaraderie) and Topic 4 (Career Growth & Learning) exhibit the highest average ratings (3.94 and 3.74 stars) and the highest positive sentiment shares (84.6% and 86.9%) in the dataset. Pros text across all 90 employers shows a mean compound sentiment of +0.65, dominated by terms like "friendly", "supportive", and "team".',
+      interpretation: 'Workplace Culture & Camaraderie shows the strongest positive workforce signal in this dataset, suggesting an area for further organizational investigation. Supportive peer relationships and collaborative team dynamics are consistently associated with higher employee sentiment across diverse sectors.',
+      implication: 'Protecting supportive team collaboration, onboarding rituals, and peer recognition networks serves as an essential organizational anchor, especially during operational restructuring or compensation friction.',
+      caution: 'Strong peer camaraderie can coexist with operational inefficiency, intense workload stress, or low compensation. High peer sentiment should not be interpreted as evidence of operational perfection or proof that turnover will not occur.'
     }
   ];
 
@@ -54,30 +58,30 @@ export default function InsightsPage() {
     {
       priority: 'P1: Immediate Operational Attention',
       theme: 'First-Line Supervisory Quality & Coaching',
-      indicator: 'Management topic accounts for 38% negative sentiment share.',
-      action: 'Implement mandatory supervisory coaching, skip-level check-ins, and feedback loops.',
-      risk: 'High Attrition Risk in Vulnerable Units'
+      indicator: 'Management & Operational Stress topics show lowest ratings (~3.0⭐) and highest negative sentiment (~26-29%).',
+      action: 'Implement targeted supervisory coaching, skip-level check-ins, and feedback loops.',
+      risk: 'Workforce Friction in Operationally Strained Units'
     },
     {
       priority: 'P2: High-Leverage Frontline Anchor',
       theme: 'Shift Predictability & Schedule Control',
-      indicator: 'Scheduling is the #2 grievance in hourly retail/food workforces.',
-      action: 'Enforce minimum 14-day advance notice on shift schedules; review scheduling software parameters.',
-      risk: 'Unscheduled Absenteeism & Churn'
+      indicator: 'Scheduling is the primary grievance topic in hourly retail and food service workforces.',
+      action: 'Evaluate advance scheduling notice practices and review automated shift allocation parameters.',
+      risk: 'Unscheduled Absenteeism & Scheduling Churn'
     },
     {
       priority: 'P3: Strategic Culture Protection',
       theme: 'Peer Camaraderie & Team Culture',
-      indicator: '91.4% positive sentiment across all 90 covered organizations.',
-      action: 'Protect team collaboration rituals; recognize peer mentorship and community anchors.',
-      risk: 'Cultural Erosion During Remote/Hybrid Friction'
+      indicator: '84.6% positive sentiment in Topic 1 across all 90 covered organizations.',
+      action: 'Protect collaborative team rituals and recognize peer mentorship and community anchors.',
+      risk: 'Cultural Dilution During Rapid Scale or Remote Restructuring'
     },
     {
       priority: 'P4: Strategic Communication',
       theme: 'Restructuring Transparency & Pace',
-      indicator: 'Tech sector reviews heavily emphasize restructuring anxiety and layoff shifts.',
-      action: 'Increase executive town hall candor and provide transparent roadmaps during organizational shifts.',
-      risk: 'Loss of Institutional Knowledge & Paralyzed Execution'
+      indicator: 'Knowledge-work reviews heavily reflect restructuring anxiety and organizational shifts.',
+      action: 'Increase executive town hall candor and provide clear strategic roadmaps during operational transitions.',
+      risk: 'Loss of Institutional Momentum & Organizational Uncertainty'
     }
   ];
 
@@ -94,7 +98,7 @@ export default function InsightsPage() {
           Executive Workforce Insights
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">
-          Synthesized strategic intelligence from 8,785 employee reviews. Every insight adheres strictly to our governance framework: Observation → Implication → Caution.
+          Synthesized strategic intelligence from 8,785 employee reviews. Every insight adheres strictly to our 4-part governance framework: Observation → Interpretation → Implication → Caution.
         </p>
       </div>
 
@@ -118,39 +122,58 @@ export default function InsightsPage() {
               {ins.title}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs leading-relaxed">
               
               {/* Observation */}
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2">
-                <div className="text-[11px] font-mono uppercase font-bold text-blue-400 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
-                  <span>OBSERVATION (DATA)</span>
+              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+                <div>
+                  <div className="text-[11px] font-mono uppercase font-bold text-blue-400 flex items-center gap-1.5 mb-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                    <span>1. OBSERVATION (DATA)</span>
+                  </div>
+                  <p className="text-slate-300">
+                    {ins.observation}
+                  </p>
                 </div>
-                <p className="text-slate-300">
-                  {ins.observation}
-                </p>
+              </div>
+
+              {/* Interpretation */}
+              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+                <div>
+                  <div className="text-[11px] font-mono uppercase font-bold text-indigo-400 flex items-center gap-1.5 mb-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                    <span>2. INTERPRETATION (SIGNAL)</span>
+                  </div>
+                  <p className="text-slate-300">
+                    {ins.interpretation}
+                  </p>
+                </div>
               </div>
 
               {/* Implication */}
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2">
-                <div className="text-[11px] font-mono uppercase font-bold text-emerald-400 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-                  <span>IMPLICATION (STRATEGY)</span>
+              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+                <div>
+                  <div className="text-[11px] font-mono uppercase font-bold text-emerald-400 flex items-center gap-1.5 mb-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                    <span>3. IMPLICATION (ATTENTION)</span>
+                  </div>
+                  <p className="text-slate-300">
+                    {ins.implication}
+                  </p>
                 </div>
-                <p className="text-slate-300">
-                  {ins.implication}
-                </p>
               </div>
 
               {/* Caution */}
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2">
-                <div className="text-[11px] font-mono uppercase font-bold text-amber-400 flex items-center gap-1.5">
-                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
-                  <span>CAUTION (LIMITATION)</span>
+              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+                <div>
+                  <div className="text-[11px] font-mono uppercase font-bold text-amber-400 flex items-center gap-1.5 mb-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                    <span>4. CAUTION (BOUNDARIES)</span>
+                  </div>
+                  <p className="text-slate-300">
+                    {ins.caution}
+                  </p>
                 </div>
-                <p className="text-slate-300">
-                  {ins.caution}
-                </p>
               </div>
 
             </div>

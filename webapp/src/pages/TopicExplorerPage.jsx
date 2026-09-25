@@ -164,6 +164,12 @@ export default function TopicExplorerPage() {
           </div>
         </div>
 
+        {/* Model Output vs Qualitative Interpretation Callout */}
+        <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs text-purple-200 leading-relaxed">
+          <strong className="text-purple-300 font-mono">Model Output vs. Human Interpretation: </strong>
+          LDA unsupervised topic modeling identified a statistical cluster of co-occurring terms ({currentTopic.top_words.slice(0, 5).map(w => `"${w}"`).join(', ')}) that was interpreted by the research team as <strong>"{currentTopic.name}"</strong> based on organizational context. The statistical model discovers word co-occurrence; the thematic label represents analytical interpretation.
+        </div>
+
         {/* Narrative & Strategic Interpretation */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs leading-relaxed">
           <div className="p-4 rounded-xl bg-slate-950/60 border border-slate-800 space-y-2">
@@ -183,8 +189,8 @@ export default function TopicExplorerPage() {
             </h4>
             <p className="text-slate-400">
               {currentTopic.avg_rating < 3.2 
-                ? "This topic operates as a significant organizational friction driver. Talent leaders should audit frontline supervisory processes, scheduling practices, or wage equity."
-                : "This topic acts as an essential talent retention anchor. Protecting psychological safety and collegial team collaboration directly supports positive employee experience."}
+                ? "This topic operates as a notable organizational friction signal in this dataset. It suggests an area for operational attention, such as auditing frontline supervisory coaching, scheduling practices, or wage equity."
+                : "This topic reflects a strong positive workforce signal. Supportive team collaboration and collegial workplace culture are consistently associated with higher employee sentiment across organizations."}
             </p>
           </div>
         </div>

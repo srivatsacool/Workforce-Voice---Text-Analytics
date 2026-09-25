@@ -90,13 +90,25 @@ export default function DashboardPage({ setActiveTab }) {
               Workforce Intelligence Dashboard
             </h1>
             <p className="text-xs sm:text-sm text-slate-400 mt-1">
-              Decoding organizational friction & retention signals from 8,785 validated reviews across 90 US employers.
+              Decoding organizational friction & workforce signals from 8,785 validated reviews across 90 US employers.
             </p>
           </div>
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-mono shrink-0">
-            <span className="w-2 h-2 rounded-full bg-amber-400" />
-            <span>Temporal Scope: 96.9% reviews in 2026 collection cycle</span>
+          <div 
+            title="This limits long-term trend interpretation and means observed patterns should be treated as a contemporary snapshot rather than a multi-year workforce census."
+            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/25 text-amber-300 text-xs font-mono shrink-0 cursor-help"
+          >
+            <span className="w-2 h-2 rounded-full bg-amber-400 animate-pulse" />
+            <span>96.9% of observations are from the 2026 collection cycle</span>
           </div>
+        </div>
+
+        {/* 5-Point Core Framework Summary */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 p-3 rounded-xl bg-slate-950/60 border border-slate-800/80 text-[11px] font-mono text-slate-400">
+          <div><strong className="text-slate-200">WHAT DATA:</strong> 8,785 employee reviews</div>
+          <div><strong className="text-slate-200">WHERE:</strong> 90 US employers</div>
+          <div><strong className="text-slate-200">METHOD:</strong> NLP + Sentiment + ML + LDA</div>
+          <div><strong className="text-slate-200">PRODUCES:</strong> Workforce signals & themes</div>
+          <div className="text-amber-400"><strong className="text-amber-300">LIMITATION:</strong> 96.9% 2026 cycle</div>
         </div>
 
         {/* Interactive Filter Control Panel */}
@@ -372,11 +384,14 @@ export default function DashboardPage({ setActiveTab }) {
             </ResponsiveContainer>
           </div>
 
-          <div className="p-2.5 rounded-lg bg-slate-950/60 border border-slate-800/80 text-[11px] text-slate-400 flex items-start gap-2">
+          <div className="p-3 rounded-lg bg-slate-950/60 border border-slate-800/80 text-[11px] text-slate-400 flex items-start gap-2.5">
             <Info className="w-4 h-4 text-blue-400 shrink-0 mt-0.5" />
-            <span>
-              <strong>Divergence Signal:</strong> 38.4% of 1-star reviews contain net-positive language (courtesy or mixed pros), showing that numerical severity often coexists with polite text.
-            </span>
+            <div className="space-y-1">
+              <strong className="text-slate-200">Divergent Workforce Signals (Rating–Text Divergence):</strong>
+              <p>
+                <strong>38.4% of 1-star reviews contain net-positive text</strong>, while <strong>8.2% of 5-star reviews contain net-negative text</strong>. Positive textual language within a low-rated review may reflect appreciation for colleagues or specific workplace aspects despite broader dissatisfaction. This is an interpretation, not a causal finding.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -461,10 +476,10 @@ export default function DashboardPage({ setActiveTab }) {
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-sm font-bold text-white font-heading">
-                4. Company Signals: Top Employers
+                4. Company-Level Signal Profiles
               </h3>
               <p className="text-xs text-slate-400">
-                Average star rating vs. positive sentiment share across high-volume employers.
+                Sorted by review volume (exploratory signal profiles, not an employer ranking).
               </p>
             </div>
             <button

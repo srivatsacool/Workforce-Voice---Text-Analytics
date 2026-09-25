@@ -75,7 +75,7 @@ export default function Footer({ setActiveTab }) {
                   onClick={() => { setActiveTab('methodology'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                   className="hover:text-blue-400 transition-colors"
                 >
-                  8-Stage NLP Pipeline
+                  9-Stage Pipeline & Governance
                 </button>
               </li>
               <li>

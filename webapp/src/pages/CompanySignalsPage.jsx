@@ -45,10 +45,17 @@ export default function CompanySignalsPage() {
   // Company reviews
   const companyReviews = sampleReviews.filter(r => r.employerName === company.employer_name);
 
-  // Filter companies list by search
-  const filteredCompanyList = companiesData.filter(c => 
-    c.employer_name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const [sortBy, setSortBy] = useState('volume');
+
+  // Filter and sort companies list
+  const filteredCompanyList = companiesData
+    .filter(c => c.employer_name.toLowerCase().includes(searchTerm.toLowerCase()))
+    .sort((a, b) => {
+      if (sortBy === 'volume') return b.review_count - a.review_count;
+      if (sortBy === 'rating') return b.avg_rating - a.avg_rating;
+      if (sortBy === 'sentiment') return b.avg_sentiment - a.avg_sentiment;
+      return a.employer_name.localeCompare(b.employer_name);
+    });
 
   return (
     <div className="space-y-8 pb-16">
@@ -57,13 +64,13 @@ export default function CompanySignalsPage() {
       <div>
         <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-2">
           <Building2 className="w-3.5 h-3.5" />
-          <span>90 US EMPLOYER PROFILES</span>
+          <span>90 US EMPLOYER SIGNAL PROFILES</span>
         </div>
         <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight">
           Company Workforce Signals
         </h1>
         <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">
-          Select any of the 90 top US employers to examine its multidimensional workforce signals, sub-dimension ratings, dominant topics, and sentiment distribution.
+          Select any of the 90 top US employers to examine its multidimensional workforce signals, sub-dimension ratings, dominant topics, and sentiment distribution. Company profiles represent cross-sectional thematic fingerprints rather than comparative league rankings.
         </p>
       </div>
 
@@ -74,20 +81,33 @@ export default function CompanySignalsPage() {
         <div className="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
-              Employer Directory ({filteredCompanyList.length})
+              Company-Level Signal Profile ({filteredCompanyList.length})
             </h2>
-            <span className="text-[10px] font-mono text-slate-500">Sorted by volume</span>
+            <span className="text-[10px] font-mono text-slate-500">Sorted by selected metric</span>
           </div>
 
-          <div className="relative">
-            <input
-              type="text"
-              placeholder="Search companies..."
-              value={searchTerm}
-              onChange={(e) => setSearchTerm(e.target.value)}
-              className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
-            />
-            <Search className="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5" />
+          <div className="flex items-center gap-2">
+            <div className="relative flex-1">
+              <input
+                type="text"
+                placeholder="Search companies..."
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="w-full bg-slate-950 border border-slate-800 rounded-lg pl-8 pr-3 py-1.5 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-blue-500"
+              />
+              <Search className="w-3.5 h-3.5 text-slate-500 absolute left-2.5 top-2.5" />
+            </div>
+
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="bg-slate-950 border border-slate-800 rounded-lg px-2 py-1.5 text-[11px] text-slate-300 focus:outline-none focus:border-blue-500"
+            >
+              <option value="volume">Review Volume</option>
+              <option value="name">Alphabetical</option>
+              <option value="rating">Average Rating</option>
+              <option value="sentiment">Net Sentiment</option>
+            </select>
           </div>
 
           <div className="space-y-1 max-h-[520px] overflow-y-auto pr-1">
@@ -125,7 +145,7 @@ export default function CompanySignalsPage() {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <span className="text-[10px] font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20 uppercase font-semibold">
-                  Organizational Fingerprint
+                  Company-Level Signal Profile
                 </span>
                 <h2 className="text-2xl sm:text-3xl font-bold text-white font-heading mt-1">
                   {company.employer_name}
