@@ -1,5 +1,5 @@
 # 🏢 WORKFORCE INTELLIGENCE ANALYTICS
-> **Turning employee-generated text into actionable workforce and organizational insights.**
+> **Using NLP, machine learning, and topic modeling to transform employee-generated text into structured workforce signals and identify recurring organizational themes and potential friction areas.**
 
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white)](https://python.org)
 [![React 19](https://img.shields.io/badge/React-19-61DAFB.svg?logo=react&logoColor=black)](https://react.dev)
@@ -10,15 +10,20 @@
 
 ---
 
-## 📌 Executive Summary & Positioning
+> [!WARNING]
+> ### ⚠️ Critical Sampling Horizon Alert: Temporal Concentration (96.9% in 2026)
+> While review submission timestamps in the Kaggle dataset span from 2014 to 2026, **8,509 of the 8,785 reviews (96.9%)** are concentrated in the recent 2026 collection cycle. This project operates as a **high-resolution contemporary cross-sectional snapshot** of post-pandemic organizational friction and cultural anchors across 90 US employers, rather than a multi-decade longitudinal census.
+
+## 📌 Executive Summary & Operations Framing
 
 Traditional human resources analytics relies heavily on periodic internal engagement surveys that suffer from survey fatigue, low response rates, and social desirability bias. Public, unsolicited employee review platforms—such as Glassdoor—offer an authentic, high-velocity stream of organizational experience.
 
-**Workforce Intelligence Analytics** is an enterprise data science and NLP platform that processes **8,785 employee reviews across 90 top US employers**. By coupling rule-based sentiment intensity (VADER), supervised machine learning classification (TF-IDF + Balanced Logistic Regression), and unsupervised topic discovery (Latent Dirichlet Allocation), the platform transforms unstructured employee narratives into decision-ready workforce signals.
+**Workforce Intelligence Analytics** operates at the intersection of **Operations Research, Business Analytics, and Natural Language Processing**. It processes **8,785 employee reviews across 90 top US employers**. By coupling rule-based sentiment intensity (VADER), supervised machine learning classification (TF-IDF + Balanced Logistic Regression), and unsupervised topic discovery (Latent Dirichlet Allocation), the platform transforms unstructured employee narratives into decision-ready workforce signals.
 
 ### 🛡️ Analytical Positioning & Governance
-This platform is positioned strictly as **Workforce Intelligence / Organizational Analytics**, not a simplistic sentiment dashboard. In accordance with rigorous data science principles:
+This platform is positioned strictly around **Workforce Signals + Organizational Friction**, not a simplistic sentiment dashboard or a claim of direct productivity measurement:
 * **Workforce Signals, Not Causal Truth:** Employee reviews represent unsolicited qualitative feedback. They are analytical *workforce signals* reflecting individual perceptions and areas for operational investigation.
+* **Isolating Friction from Loyalty:** Unstructured commentary decouples numerical ratings from underlying operational realities—isolating frontline supervisory breakdowns, shift scheduling friction, and compensation disparities.
 * **No Unsupported Claims:** We explicitly reject claims that reviews directly measure operational productivity, prove management competence, or causally dictate employee turnover.
 * **Triangulation:** Public review data is designed to be triangulated with internal retention audits, stay interviews, and HRIS operational metrics.
 

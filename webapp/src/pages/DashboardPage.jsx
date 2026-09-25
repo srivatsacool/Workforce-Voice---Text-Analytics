@@ -84,13 +84,19 @@ export default function DashboardPage({ setActiveTab }) {
       
       {/* Header & Filter Bar */}
       <div className="space-y-4">
-        <div>
-          <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight">
-            Workforce Intelligence Dashboard
-          </h1>
-          <p className="text-xs sm:text-sm text-slate-400 mt-1">
-            Real-time organizational signals computed from 8,785 validated reviews across 90 US employers.
-          </p>
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+          <div>
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight">
+              Workforce Intelligence Dashboard
+            </h1>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1">
+              Decoding organizational friction & retention signals from 8,785 validated reviews across 90 US employers.
+            </p>
+          </div>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-300 text-xs font-mono shrink-0">
+            <span className="w-2 h-2 rounded-full bg-amber-400" />
+            <span>Temporal Scope: 96.9% reviews in 2026 collection cycle</span>
+          </div>
         </div>
 
         {/* Interactive Filter Control Panel */}
