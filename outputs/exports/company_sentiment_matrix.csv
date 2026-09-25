@@ -1,0 +1,91 @@
+employerName,Negative,Neutral,Positive
+7-Eleven,23.0,1.0,76.0
+ALDI,24.0,2.0,74.0
+AT&T,18.0,2.0,80.0
+Accenture,18.0,3.0,79.0
+Adobe,9.0,2.0,89.0
+Airbnb,8.0,0.0,92.0
+Albertsons Companies,27.0,5.0,68.0
+Amazon,16.0,1.0,83.0
+American Airlines,18.0,1.0,81.0
+Apple,12.0,2.0,86.0
+BANK,11.59,1.4500000000000002,86.96000000000001
+Best Buy,21.0,0.0,79.0
+Boeing,13.0,1.0,86.0
+Burger King,27.0,5.0,68.0
+CVS Health,25.0,7.000000000000001,68.0
+Chick-fil-A Corporate,17.0,0.0,83.0
+Chipotle,19.0,1.0,80.0
+Cisco,5.0,1.0,94.0
+Citi,22.0,3.0,75.0
+Comcast,12.0,3.0,85.0
+Costco Wholesale,19.0,2.0,79.0
+Cracker Barrel,27.0,4.0,69.0
+Dell Technologies,16.0,1.0,83.0
+Deloitte,16.0,3.0,81.0
+Dollar Tree,31.0,7.000000000000001,62.0
+Domino's,26.0,2.0,72.0
+DoorDash,31.0,5.0,64.0
+Dunkin',27.0,2.0,71.0
+EY,15.0,4.0,81.0
+Enterprise,14.000000000000002,3.0,83.0
+FedEx,24.0,4.0,72.0
+Ford Motor Company,13.0,2.0,85.0
+General Motors (GM),19.0,1.0,80.0
+Goldman Sachs,15.0,1.0,84.0
+Google,7.000000000000001,1.0,92.0
+Helmerich & Payne,11.0,4.0,85.0
+Hilton,23.0,3.0,74.0
+Humana,20.0,4.0,76.0
+IBM,14.000000000000002,3.0,83.0
+Instacart,28.999999999999996,2.0,69.0
+Intellectual Property,33.33,0.0,66.67
+Johnson & Johnson,5.0,2.0,93.0
+KFC,27.0,3.0,70.0
+Kaiser Permanente,12.0,3.0,85.0
+Kohl's,24.0,9.0,67.0
+Kroger,28.000000000000004,5.0,67.0
+Lockheed Martin,10.0,0.0,90.0
+Lowe's RV Sales and Service,0.0,0.0,100.0
+Lyft,22.0,1.0,77.0
+Macy's,27.0,2.0,71.0
+Marriott International,16.0,2.0,82.0
+McDonald's,22.0,4.0,74.0
+Meta,23.0,1.0,76.0
+Microsoft,19.0,1.0,80.0
+NIKE,10.0,3.0,87.0
+Netflix,2.0,4.0,94.0
+Nordstrom,18.0,0.0,82.0
+Oracle,30.0,3.0,67.0
+Panera Bread,18.0,4.0,78.0
+PepsiCo,14.000000000000002,5.0,81.0
+Pfizer,8.0,3.0,89.0
+Pizza Hut,28.000000000000004,5.0,67.0
+Publix,15.0,2.0,83.0
+PwC,19.0,3.0,78.0
+Ross Stores,24.0,3.0,73.0
+Safeway,32.0,4.0,64.0
+Salesforce,9.0,1.0,90.0
+Southwest Airlines,12.0,0.0,88.0
+Spotify,9.0,1.0,90.0
+Starbucks,18.0,1.0,81.0
+Subway,32.0,0.0,68.0
+T-Mobile,19.0,2.0,79.0
+TJ Maxx,28.000000000000004,1.0,71.0
+Taco Bell,25.0,5.0,70.0
+Target,32.0,2.0,66.0
+Tesla,18.0,5.0,77.0
+The Coca-Cola Company,10.0,4.0,86.0
+The Home Depot,11.0,6.0,83.0
+US Postal Service,33.0,2.0,65.0
+Uber,26.0,1.0,73.0
+United Airlines,12.0,0.0,88.0
+UnitedHealth Group,19.0,2.0,79.0
+Verizon,20.0,5.0,75.0
+Waffle House,15.0,3.0,82.0
+Walgreens,43.0,2.0,55.00000000000001
+Walmart,23.0,4.0,73.0
+Walt Disney Company,15.0,3.0,82.0
+Wawa,16.0,0.0,84.0
+Wells Fargo,20.0,3.0,77.0
+Wendy's,26.0,1.0,73.0

@@ -1,0 +1,23 @@
+[
+  {
+    "sentiment_category": "Positive",
+    "count": 6872,
+    "pct": 78.22,
+    "avg_rating": 3.76,
+    "avg_compound": 0.747
+  },
+  {
+    "sentiment_category": "Neutral",
+    "count": 225,
+    "pct": 2.56,
+    "avg_rating": 3.2,
+    "avg_compound": 0.001
+  },
+  {
+    "sentiment_category": "Negative",
+    "count": 1688,
+    "pct": 19.21,
+    "avg_rating": 2.7,
+    "avg_compound": -0.545
+  }
+]

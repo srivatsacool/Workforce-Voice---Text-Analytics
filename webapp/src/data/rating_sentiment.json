@@ -1,0 +1,32 @@
+[
+  {
+    "ratingOverall": 1,
+    "Negative": 53.620000000000005,
+    "Neutral": 3.62,
+    "Positive": 42.76
+  },
+  {
+    "ratingOverall": 2,
+    "Negative": 37.67,
+    "Neutral": 4.19,
+    "Positive": 58.14
+  },
+  {
+    "ratingOverall": 3,
+    "Negative": 23.02,
+    "Neutral": 3.1,
+    "Positive": 73.88
+  },
+  {
+    "ratingOverall": 4,
+    "Negative": 10.82,
+    "Neutral": 1.7999999999999998,
+    "Positive": 87.38
+  },
+  {
+    "ratingOverall": 5,
+    "Negative": 6.909999999999999,
+    "Neutral": 1.95,
+    "Positive": 91.15
+  }
+]

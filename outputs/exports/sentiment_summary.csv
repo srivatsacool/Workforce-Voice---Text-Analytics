@@ -1,0 +1,4 @@
+sentiment_category,count,pct,avg_rating,avg_compound
+Positive,6872,78.22,3.76,0.747
+Neutral,225,2.56,3.2,0.001
+Negative,1688,19.21,2.7,-0.545

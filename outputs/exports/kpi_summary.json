@@ -1,0 +1,281 @@
+{
+  "total_reviews": 8785,
+  "total_companies": 90,
+  "avg_rating_overall": 3.54,
+  "median_rating_overall": 4.0,
+  "pct_positive_sentiment": 78.2,
+  "pct_neutral_sentiment": 2.6,
+  "pct_negative_sentiment": 19.2,
+  "avg_sentiment_compound": 0.48,
+  "topics_discovered": 6,
+  "date_range": {
+    "min_date": "2014-08-01",
+    "max_date": "2026-09-04"
+  },
+  "ml_model_performance": {
+    "accuracy": 0.8244392884764115,
+    "precision_macro": 0.7641379508220238,
+    "recall_macro": 0.7981874246919658,
+    "f1_macro": 0.7774767951491002,
+    "test_samples": 1293,
+    "train_samples": 5168,
+    "classes": [
+      "Negative (1-2)",
+      "Positive (4-5)"
+    ]
+  },
+  "top_positive_indicators": [
+    {
+      "term": "supportive",
+      "coefficient": 3.0219546586278727
+    },
+    {
+      "term": "con",
+      "coefficient": 2.91604193773068
+    },
+    {
+      "term": "sometimes",
+      "coefficient": 2.3330405969466876
+    },
+    {
+      "term": "slow",
+      "coefficient": 2.2695050760015425
+    },
+    {
+      "term": "amazing",
+      "coefficient": 2.2130426689590874
+    },
+    {
+      "term": "hard",
+      "coefficient": 2.0937010168434456
+    },
+    {
+      "term": "atmosphere",
+      "coefficient": 1.880004370245745
+    },
+    {
+      "term": "opportunity",
+      "coefficient": 1.8757058817290446
+    },
+    {
+      "term": "downside",
+      "coefficient": 1.8160663458987074
+    },
+    {
+      "term": "benefit",
+      "coefficient": 1.760196766171161
+    }
+  ],
+  "top_negative_indicators": [
+    {
+      "term": "poor",
+      "coefficient": -5.085461961382334
+    },
+    {
+      "term": "terrible",
+      "coefficient": -3.9984816919089683
+    },
+    {
+      "term": "toxic",
+      "coefficient": -3.6940675174947177
+    },
+    {
+      "term": "horrible",
+      "coefficient": -3.645265537006622
+    },
+    {
+      "term": "management",
+      "coefficient": -3.0689229650129852
+    },
+    {
+      "term": "lack",
+      "coefficient": -2.5084234491197734
+    },
+    {
+      "term": "overshadowed",
+      "coefficient": -2.37936275748605
+    },
+    {
+      "term": "not",
+      "coefficient": -2.342581991421688
+    },
+    {
+      "term": "everything",
+      "coefficient": -2.1961152814599556
+    },
+    {
+      "term": "never",
+      "coefficient": -2.144335210376386
+    }
+  ],
+  "topic_definitions": [
+    {
+      "topic_id": 0,
+      "code": "T0",
+      "name": "Compensation & Hourly Pay Dynamics",
+      "short_name": "Compensation & Pay",
+      "description": "Discussions regarding wages, compensation, store level hourly pay, and basic retail remuneration.",
+      "color": "#E11D48",
+      "top_words": [
+        "environment",
+        "pay",
+        "customer",
+        "coworkers",
+        "fun",
+        "friendly",
+        "management",
+        "nice",
+        "supportive",
+        "team",
+        "high",
+        "workload"
+      ],
+      "prevalence_pct": 15.4,
+      "review_count": 1353,
+      "avg_rating": 3.69,
+      "avg_sentiment_compound": 0.478,
+      "pct_positive_sentiment": 78.1,
+      "pct_negative_sentiment": 19.6
+    },
+    {
+      "topic_id": 1,
+      "code": "T1",
+      "name": "Workplace Culture & Camaraderie",
+      "short_name": "Culture & Camaraderie",
+      "description": "Interpersonal relationships, supportive team atmosphere, collegial culture, and day-to-day morale.",
+      "color": "#059669",
+      "top_words": [
+        "life",
+        "balance",
+        "benefit",
+        "culture",
+        "pay",
+        "opportunity",
+        "growth",
+        "salary",
+        "not",
+        "career",
+        "limited",
+        "environment"
+      ],
+      "prevalence_pct": 19.98,
+      "review_count": 1755,
+      "avg_rating": 3.94,
+      "avg_sentiment_compound": 0.592,
+      "pct_positive_sentiment": 84.6,
+      "pct_negative_sentiment": 13.7
+    },
+    {
+      "topic_id": 2,
+      "code": "T2",
+      "name": "Work-Life Balance & Scheduling",
+      "short_name": "Work-Life Balance",
+      "description": "Schedule predictability, shift lengths, long working hours, flexibility, and personal life equilibrium.",
+      "color": "#2563EB",
+      "top_words": [
+        "hour",
+        "pay",
+        "flexible",
+        "schedule",
+        "long",
+        "low",
+        "shift",
+        "easy",
+        "not",
+        "scheduling",
+        "flexibility",
+        "benefit"
+      ],
+      "prevalence_pct": 16.72,
+      "review_count": 1469,
+      "avg_rating": 3.56,
+      "avg_sentiment_compound": 0.398,
+      "pct_positive_sentiment": 74.5,
+      "pct_negative_sentiment": 21.8
+    },
+    {
+      "topic_id": 3,
+      "code": "T3",
+      "name": "Management Quality & Internal Communication",
+      "short_name": "Management & Communication",
+      "description": "First-line supervisory effectiveness, communication clarity, leadership trust, and managerial support.",
+      "color": "#D97706",
+      "top_words": [
+        "not",
+        "manager",
+        "year",
+        "training",
+        "store",
+        "every",
+        "customer",
+        "experience",
+        "want",
+        "new",
+        "take",
+        "position"
+      ],
+      "prevalence_pct": 13.09,
+      "review_count": 1150,
+      "avg_rating": 3.01,
+      "avg_sentiment_compound": 0.382,
+      "pct_positive_sentiment": 71.7,
+      "pct_negative_sentiment": 25.7
+    },
+    {
+      "topic_id": 4,
+      "code": "T4",
+      "name": "Career Growth & Learning Opportunities",
+      "short_name": "Career Development",
+      "description": "Professional advancement, skill acquisition, promotion pathways, and career development opportunities.",
+      "color": "#7C3AED",
+      "top_words": [
+        "team",
+        "culture",
+        "opportunity",
+        "leadership",
+        "project",
+        "experience",
+        "growth",
+        "learning",
+        "layoff",
+        "environment",
+        "career",
+        "strong"
+      ],
+      "prevalence_pct": 20.44,
+      "review_count": 1796,
+      "avg_rating": 3.74,
+      "avg_sentiment_compound": 0.626,
+      "pct_positive_sentiment": 86.9,
+      "pct_negative_sentiment": 11.0
+    },
+    {
+      "topic_id": 5,
+      "code": "T5",
+      "name": "Operational Pace, Stress & Organizational Shifts",
+      "short_name": "Operational Stress & Shifts",
+      "description": "Fast-paced execution, workload pressure, organizational restructuring, layoffs, and staffing friction.",
+      "color": "#0891B2",
+      "top_words": [
+        "management",
+        "poor",
+        "pay",
+        "benefit",
+        "free",
+        "food",
+        "manager",
+        "not",
+        "toxic",
+        "bad",
+        "issue",
+        "lack"
+      ],
+      "prevalence_pct": 14.37,
+      "review_count": 1262,
+      "avg_rating": 2.98,
+      "avg_sentiment_compound": 0.3,
+      "pct_positive_sentiment": 67.5,
+      "pct_negative_sentiment": 29.2
+    }
+  ]
+}
