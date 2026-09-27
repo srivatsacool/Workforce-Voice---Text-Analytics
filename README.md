@@ -112,21 +112,24 @@ We designed three distinct, fully realized aesthetic universes using Impeccable 
 
 #### 🏛️ World 1: The Editorial Intelligence Gazette
 <div align="center">
-  <img src="outputs/figures/world_editorial_intelligence.jpg" alt="World 1: Editorial Intelligence Gazette UI Mockup" width="90%" />
+  <img src="outputs/figures/world_editorial_intelligence.jpg" alt="World 1: Editorial Intelligence Gazette UI Mockup" width="48%" />
+  <img src="outputs/figures/editorial_briefing_matrix.jpg" alt="World 1: Structural Distress & Friction Report Matrix" width="48%" />
 </div>
 
 > **Design Thesis:** An elite *Financial Times* / *Bloomberg* executive briefing deck aesthetic. Clean warm parchment ground, deep charcoal typography, serif display headers, dense tabular signal matrices, and razor-sharp hairline ruling lines.
 
 #### 🛰️ World 2: Cybernetic Deep Slate Operations Matrix
 <div align="center">
-  <img src="outputs/figures/world_cybernetic_operations.jpg" alt="World 2: Cybernetic Operations Matrix UI Mockup" width="90%" />
+  <img src="outputs/figures/world_cybernetic_operations.jpg" alt="World 2: Cybernetic Operations Matrix UI Mockup" width="48%" />
+  <img src="outputs/figures/cybernetic_telemetry_radar.jpg" alt="World 2: Workforce Operations Telemetry & Radar Console" width="48%" />
 </div>
 
 > **Design Thesis:** A high-density NASA mission control telemetry deck. Deep obsidian slate background, glowing ice-blue and cyan laser data streams, amber operational friction warnings, radar performance charts, and live acoustic sentiment waveform monitors.
 
 #### 🌊 World 3: Biomorphic Neural Voice Canvas
 <div align="center">
-  <img src="outputs/figures/world_biomorphic_voice.jpg" alt="World 3: Biomorphic Neural Voice Canvas UI Mockup" width="90%" />
+  <img src="outputs/figures/world_biomorphic_voice.jpg" alt="World 3: Biomorphic Neural Voice Canvas UI Mockup" width="48%" />
+  <img src="outputs/figures/biomorphic_sentiment_sphere.jpg" alt="World 3: 3D Neural Sentiment Sphere with Emotion Pulses" width="48%" />
 </div>
 
 > **Design Thesis:** An organic deep-tech acoustic canvas. Midnight abyssal blue ground, fluid bioluminescent cyan and violet neural soundwaves, frosted glassmorphic card containers, and human voice sentiment spotlights.
@@ -168,6 +171,12 @@ workforce-intelligence/
 │   │   ├── workforce_hero_visual.jpg           # Command center & neural acoustic lattice
 │   │   ├── signal_divergence_matrix.jpg        # Rating vs text divergence holographic prism
 │   │   ├── topic_clusters_visual.jpg           # 6 latent LDA topic clusters landscape
+│   │   ├── world_editorial_intelligence.jpg    # World 1: Editorial Intelligence Gazette UI
+│   │   ├── editorial_briefing_matrix.jpg       # World 1: Friction & distress briefing report
+│   │   ├── world_cybernetic_operations.jpg     # World 2: Cybernetic Operations Matrix UI
+│   │   ├── cybernetic_telemetry_radar.jpg      # World 2: Telemetry & acoustic radar console
+│   │   ├── world_biomorphic_voice.jpg          # World 3: Biomorphic Neural Voice Canvas UI
+│   │   ├── biomorphic_sentiment_sphere.jpg     # World 3: 3D sentiment emotion sphere
 │   │   ├── 01_rating_distribution.png
 │   │   ├── 02_missing_values_heatmap.png
 │   │   ├── 04_sentiment_distribution.png
