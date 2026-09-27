@@ -149,8 +149,8 @@ html:not(.dark)[data-world="editorial"] {
 
 /* Custom modern scrollbar */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
 }
 ::-webkit-scrollbar-track {
   background: transparent;
@@ -163,9 +163,40 @@ html:not(.dark)[data-world="editorial"] {
   background: rgba(148, 163, 184, 0.45);
 }
 
-/* Smooth transitions */
-button, a {
-  transition: all 0.15s ease-in-out;
+/* Measured motion transitions per design thesis */
+:root {
+  --ease-measured: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-fast: 150ms;
+  --duration-base: 220ms;
+}
+
+button, a, input, select {
+  transition: all var(--duration-fast) var(--ease-measured);
+}
+
+.world-card {
+  transition: transform var(--duration-base) var(--ease-measured),
+              border-color var(--duration-base) var(--ease-measured),
+              box-shadow var(--duration-base) var(--ease-measured),
+              background var(--duration-base) var(--ease-measured) !important;
+}
+
+.world-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+    transform: none !important;
+  }
+  .world-card:hover {
+    transform: none !important;
+  }
 }
 
 /* Impeccable subtle ambient glows */
@@ -176,3 +207,4 @@ button, a {
 .glow-cyan {
   box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.15);
 }
+

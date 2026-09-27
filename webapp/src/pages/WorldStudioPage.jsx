@@ -113,50 +113,50 @@ export default function WorldStudioPage({ setActiveTab }) {
   const current = worlds[world] || worlds.cybernetic;
 
   return (
-    <div className="space-y-12 pb-20">
+    <div className="space-y-12 sm:space-y-14 pb-20">
       
       {/* Header Banner */}
       <div className="text-center max-w-4xl mx-auto px-4 pt-4">
-        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-mono font-medium bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 border border-blue-500/20 text-blue-400 mb-4">
-          <Sparkles className="w-3.5 h-3.5 text-blue-400 animate-spin" style={{ animationDuration: '6s' }} />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-gradient-to-r from-blue-500/10 via-indigo-500/10 to-purple-500/10 border border-blue-500/20 text-blue-400 mb-4">
+          <Sparkles className="w-4 h-4 text-blue-400 animate-spin" style={{ animationDuration: '6s' }} />
           <span>IMPECCABLE DESIGN STUDIO • NANO BANANA GENERATIVE WORLDS</span>
         </div>
-        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 dark:text-white font-heading tracking-tight mb-4">
+        <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white font-heading tracking-tight mb-4">
           Explore Candidate Visual Universes
         </h1>
-        <p className="text-xs sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed">
           Three radically distinct, production-grade visual worlds crafted via the Impeccable methodology to eradicate generic AI tropes and establish an authentic aesthetic identity for workforce analytics.
         </p>
       </div>
 
       {/* World Selector Tabs */}
       <div className="flex justify-center px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-4xl w-full p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3.5 max-w-5xl w-full p-2 rounded-3xl bg-slate-900/90 border border-slate-800 shadow-xl">
           {Object.values(worlds).map((w) => {
             const isSelected = world === w.id;
             return (
               <button
                 key={w.id}
                 onClick={() => setWorld(w.id)}
-                className={`p-3.5 rounded-xl text-left transition-all cursor-pointer flex flex-col justify-between ${
+                className={`p-5 rounded-2xl text-left transition-all cursor-pointer flex flex-col justify-between space-y-3 ${
                   isSelected
-                    ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 ring-1 ring-blue-400/40'
+                    ? 'bg-blue-600 text-white shadow-xl shadow-blue-600/30 ring-1 ring-blue-400/50'
                     : 'text-slate-400 hover:text-white hover:bg-slate-800/60'
                 }`}
               >
-                <div className="flex items-center justify-between mb-2">
-                  <span className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${
-                    isSelected ? 'bg-white/20 text-white' : 'bg-slate-800 text-blue-400'
+                <div className="flex items-center justify-between w-full">
+                  <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-md ${
+                    isSelected ? 'bg-white/20 text-white' : 'bg-slate-800 text-blue-400 border border-slate-700/60'
                   }`}>
                     WORLD {w.code}
                   </span>
-                  {isSelected && <Check className="w-4 h-4 text-white" />}
+                  {isSelected && <Check className="w-5 h-5 text-white" />}
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold tracking-tight font-heading leading-tight">
+                  <h3 className="text-base sm:text-lg font-bold tracking-tight font-heading leading-tight">
                     {w.title}
                   </h3>
-                  <p className={`text-[11px] mt-1 line-clamp-1 ${isSelected ? 'text-blue-100' : 'text-slate-500'}`}>
+                  <p className={`text-xs sm:text-sm mt-1 line-clamp-1 ${isSelected ? 'text-blue-100' : 'text-slate-400'}`}>
                     {w.subtitle}
                   </p>
                 </div>
@@ -167,22 +167,22 @@ export default function WorldStudioPage({ setActiveTab }) {
       </div>
 
       {/* Active World Display Showcase */}
-      <div className="max-w-6xl mx-auto px-4 space-y-8">
+      <div className="max-w-6xl mx-auto px-4 space-y-10">
         
         {/* Visual Mockups Showcase (Side by Side) */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           
           {/* Full Mockup */}
-          <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-xl group flex flex-col justify-between">
-            <div className="p-3.5 border-b border-slate-800/80 bg-slate-900/80 flex items-center justify-between text-xs">
+          <div className="rounded-3xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl group flex flex-col justify-between">
+            <div className="p-4 sm:p-5 border-b border-slate-800/80 bg-slate-900/80 flex items-center justify-between text-xs sm:text-sm">
               <span className="font-mono font-bold text-blue-400 uppercase tracking-wider">
                 Full Application Viewport
               </span>
               <button
                 onClick={() => setModalImage({ src: current.fullMockup, title: current.fullTitle })}
-                className="flex items-center gap-1 text-[11px] text-slate-400 hover:text-white transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-xs text-slate-300 hover:text-white transition-colors cursor-pointer"
               >
-                <Maximize2 className="w-3.5 h-3.5" />
+                <Maximize2 className="w-4 h-4" />
                 <span>Zoom</span>
               </button>
             </div>
@@ -196,23 +196,23 @@ export default function WorldStudioPage({ setActiveTab }) {
                 className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
-            <div className="p-3 bg-slate-950 text-left">
-              <h4 className="text-xs font-bold text-white font-heading">{current.fullTitle}</h4>
-              <p className="text-[11px] text-slate-400 mt-0.5">Macro layout, navigation topology, and primary signal hierarchy.</p>
+            <div className="p-5 bg-slate-950 text-left border-t border-slate-800/60">
+              <h4 className="text-base font-bold text-white font-heading">{current.fullTitle}</h4>
+              <p className="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">Macro layout, navigation topology, and primary signal hierarchy.</p>
             </div>
           </div>
 
           {/* Detailed Feature Mockup */}
-          <div className="rounded-2xl overflow-hidden border border-slate-800 bg-slate-950 shadow-xl group flex flex-col justify-between">
-            <div className="p-3.5 border-b border-slate-800/80 bg-slate-900/80 flex items-center justify-between text-xs">
+          <div className="rounded-3xl overflow-hidden border border-slate-800 bg-slate-950 shadow-2xl group flex flex-col justify-between">
+            <div className="p-4 sm:p-5 border-b border-slate-800/80 bg-slate-900/80 flex items-center justify-between text-xs sm:text-sm">
               <span className="font-mono font-bold text-cyan-400 uppercase tracking-wider">
                 Deep-Dive Operational Feature
               </span>
               <button
                 onClick={() => setModalImage({ src: current.detailMockup, title: current.detailTitle })}
-                className="flex items-center gap-1 text-[11px] text-slate-400 hover:text-white transition-colors cursor-pointer"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-xs text-slate-300 hover:text-white transition-colors cursor-pointer"
               >
-                <Maximize2 className="w-3.5 h-3.5" />
+                <Maximize2 className="w-4 h-4" />
                 <span>Zoom</span>
               </button>
             </div>
@@ -226,54 +226,54 @@ export default function WorldStudioPage({ setActiveTab }) {
                 className="w-full h-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-500"
               />
             </div>
-            <div className="p-3 bg-slate-950 text-left">
-              <h4 className="text-xs font-bold text-white font-heading">{current.detailTitle}</h4>
-              <p className="text-[11px] text-slate-400 mt-0.5">Granular matrix reporting, acoustic audio waveforms, or 3D sentiment pulses.</p>
+            <div className="p-5 bg-slate-950 text-left border-t border-slate-800/60">
+              <h4 className="text-base font-bold text-white font-heading">{current.detailTitle}</h4>
+              <p className="text-xs sm:text-sm text-slate-400 mt-1 leading-relaxed">Granular matrix reporting, acoustic audio waveforms, or 3D sentiment pulses.</p>
             </div>
           </div>
 
         </div>
 
         {/* Detailed Design DNA & Token Specification */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 text-left">
           
           {/* Left Column: DNA & Palette */}
           <div className="lg:col-span-7 space-y-6">
             
             {/* Aesthetic Anchor */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-3">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-4">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">
                 <Compass className="w-4 h-4 text-blue-400" />
                 <span>Cultural Anchor & Governing Metaphor</span>
               </div>
-              <h3 className="text-xl font-bold text-slate-900 dark:text-white font-heading">
+              <h3 className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white font-heading">
                 {current.title}
               </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-                <strong>Cultural Ancestry:</strong> {current.anchor}
+              <p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                <strong className="text-slate-900 dark:text-white font-semibold">Cultural Ancestry:</strong> {current.anchor}
               </p>
-              <div className="p-3 rounded-xl bg-slate-950 text-xs text-slate-300 border border-slate-800 leading-relaxed">
-                <strong className="text-rose-400 font-mono">Anti-AI-Slop Doctrine: </strong>
-                {current.antiSlop}
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 text-sm text-slate-300 border border-slate-800 leading-relaxed">
+                <strong className="text-rose-400 font-mono text-xs uppercase tracking-wider block mb-1">Anti-AI-Slop Doctrine:</strong>
+                <p className="font-normal">{current.antiSlop}</p>
               </div>
             </div>
 
             {/* Color Strategy & Tokens */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-4">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2 text-xs font-mono font-bold text-emerald-400 uppercase tracking-wider">
                   <Palette className="w-4 h-4 text-emerald-400" />
                   <span>Color Strategy & Semantic Tokens</span>
                 </div>
-                <span className="text-[11px] font-mono text-slate-400">{current.colorStrategy}</span>
+                <span className="text-xs font-mono text-slate-400">{current.colorStrategy}</span>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-5 gap-2">
+              <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                 {current.swatches.map((s, idx) => (
-                  <div key={idx} className="p-2.5 rounded-xl border border-slate-800 bg-slate-950/70 text-center space-y-1.5">
-                    <div className={`w-full h-8 rounded-lg ${s.bg} border ${s.border}`} />
-                    <div className="text-[10px] font-semibold text-slate-300 truncate" title={s.name}>{s.name}</div>
-                    <div className="text-[9px] font-mono text-slate-500">{s.hex}</div>
+                  <div key={idx} className="p-3.5 rounded-2xl border border-slate-800 bg-slate-950/70 text-center space-y-2">
+                    <div className={`w-full h-10 rounded-xl ${s.bg} border ${s.border}`} />
+                    <div className="text-xs font-bold text-slate-200 truncate" title={s.name}>{s.name}</div>
+                    <div className="text-xs font-mono text-slate-400">{s.hex}</div>
                   </div>
                 ))}
               </div>
@@ -285,40 +285,40 @@ export default function WorldStudioPage({ setActiveTab }) {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Typographic System */}
-            <div className="p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-4">
+            <div className="p-6 sm:p-8 rounded-3xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-5">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-purple-400 uppercase tracking-wider">
                 <Sliders className="w-4 h-4 text-purple-400" />
                 <span>Typographic Hierarchy</span>
               </div>
 
-              <div className="space-y-3 text-xs">
-                <div className="p-3 rounded-xl bg-slate-950 border border-slate-800">
-                  <span className="text-[10px] font-mono text-purple-400 block mb-1">DISPLAY HEADERS</span>
-                  <span className="text-sm font-bold text-white font-heading">{current.fontDisplay}</span>
+              <div className="space-y-3.5">
+                <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800">
+                  <span className="text-xs font-mono text-purple-400 block mb-1 tracking-wider">DISPLAY HEADERS</span>
+                  <span className="text-base sm:text-lg font-bold text-white font-heading">{current.fontDisplay}</span>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-950 border border-slate-800">
-                  <span className="text-[10px] font-mono text-blue-400 block mb-1">DATA & METRICS</span>
-                  <span className="text-sm font-bold text-white font-mono">{current.fontData}</span>
+                <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800">
+                  <span className="text-xs font-mono text-blue-400 block mb-1 tracking-wider">DATA & METRICS</span>
+                  <span className="text-base sm:text-lg font-bold text-white font-mono">{current.fontData}</span>
                 </div>
-                <div className="p-3 rounded-xl bg-slate-950 border border-slate-800">
-                  <span className="text-[10px] font-mono text-emerald-400 block mb-1">EXPLANATORY BODY</span>
-                  <span className="text-sm font-medium text-slate-300">{current.fontBody}</span>
+                <div className="p-4 sm:p-5 rounded-2xl bg-slate-950 border border-slate-800">
+                  <span className="text-xs font-mono text-emerald-400 block mb-1 tracking-wider">EXPLANATORY BODY</span>
+                  <span className="text-base font-medium text-slate-200">{current.fontBody}</span>
                 </div>
               </div>
             </div>
 
             {/* Revamp Commitment Action */}
-            <div className="p-6 rounded-2xl bg-gradient-to-br from-blue-950/60 to-slate-900 border border-blue-500/30 shadow-lg space-y-3">
+            <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-br from-blue-950/60 to-slate-900 border border-blue-500/30 shadow-xl space-y-4">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-blue-400 uppercase tracking-wider">
                 <ShieldCheck className="w-4 h-4" />
                 <span>Strategic Revamp Fit</span>
               </div>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                <strong>Optimal Audience:</strong> {current.idealFor}
+              <p className="text-sm text-slate-300 leading-relaxed">
+                <strong className="text-white font-semibold">Optimal Audience:</strong> {current.idealFor}
               </p>
               <button
                 onClick={() => { setActiveTab('dashboard'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-all shadow-md cursor-pointer"
+                className="w-full flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm transition-all shadow-lg shadow-blue-600/30 cursor-pointer"
               >
                 <Check className="w-4 h-4 text-emerald-300" />
                 <span>Active Globally • Launch Dashboard View</span>

@@ -109,34 +109,41 @@ export default function MethodologyPage() {
   ];
 
   return (
-    <div className="space-y-8 pb-16">
+    <div className="space-y-8 sm:space-y-10 pb-16">
       
       {/* Header */}
       <div>
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-2">
-          <Cpu className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-blue-500/10 text-blue-400 border border-blue-500/20 mb-3">
+          <Cpu className="w-4 h-4 text-blue-400" />
           <span>METHODOLOGICAL RIGOR & GOVERNANCE</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight">
           The 9-Stage Analytics Pipeline
         </h1>
-        <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">
+        <p className="text-sm sm:text-base text-slate-400 mt-2 max-w-4xl leading-relaxed">
           Complete methodological transparency: How raw employee reviews are cleaned, normalized, classified, modeled, synthesized into workforce signals, and governed under non-causal interpretation standards.
         </p>
       </div>
 
       {/* Visual Pipeline Flow */}
-      <div className="p-6 rounded-2xl world-card space-y-6">
+      <div className="p-6 sm:p-8 rounded-3xl world-card space-y-8">
         
-        <div className="flex items-center justify-between">
-          <h2 className="text-base font-bold text-white font-heading">
-            Pipeline Stages Overview (9 Stages)
-          </h2>
-          <span className="text-xs font-mono text-slate-400">Click any stage to view technical specifications</span>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-slate-800/80">
+          <div>
+            <h2 className="text-xl sm:text-2xl font-bold text-white font-heading">
+              Pipeline Stages Overview (9 Stages)
+            </h2>
+            <p className="text-xs sm:text-sm text-slate-400 mt-1">
+              Select any stage below to inspect its operational requirements, methodological rationale, and output artifacts.
+            </p>
+          </div>
+          <span className="text-xs font-mono text-blue-400 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 w-fit">
+            STAGE {steps[activeStep].code} ACTIVE
+          </span>
         </div>
 
-        {/* Stepper Tabs */}
-        <div className="grid grid-cols-3 sm:grid-cols-5 lg:grid-cols-9 gap-2">
+        {/* Spacious 3x3 Stage Selector Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {steps.map((st, i) => {
             const Icon = st.icon;
             const isCurrent = activeStep === i;
@@ -144,20 +151,27 @@ export default function MethodologyPage() {
               <button
                 key={st.id}
                 onClick={() => setActiveStep(i)}
-                className={`p-2.5 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                className={`p-5 rounded-2xl border text-left transition-all cursor-pointer flex flex-col justify-between space-y-3 ${
                   isCurrent
-                    ? 'bg-blue-600 border-blue-500 text-white shadow-md shadow-blue-500/20'
-                    : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-slate-200 hover:bg-slate-900'
+                    ? 'bg-blue-600/90 border-blue-400 text-white shadow-xl shadow-blue-600/20 ring-1 ring-blue-400/50'
+                    : 'bg-slate-950/60 border-slate-800 text-slate-400 hover:text-white hover:bg-slate-900/90 hover:border-slate-700'
                 }`}
               >
-                <div className="flex items-center justify-between w-full mb-1.5">
-                  <span className={`text-[10px] font-mono font-bold px-1.5 py-0.5 rounded ${isCurrent ? 'bg-white/20 text-white' : 'bg-slate-900 text-slate-400'}`}>
-                    {st.code}
+                <div className="flex items-center justify-between w-full">
+                  <span className={`text-xs font-mono font-bold px-2.5 py-1 rounded-md ${isCurrent ? 'bg-white/20 text-white' : 'bg-slate-900 text-slate-300 border border-slate-800'}`}>
+                    STAGE {st.code}
                   </span>
-                  <Icon className="w-3.5 h-3.5" />
+                  <div className={`p-2 rounded-lg ${isCurrent ? 'bg-white/10 text-white' : 'bg-slate-900/80 text-blue-400'}`}>
+                    <Icon className="w-5 h-5" />
+                  </div>
                 </div>
-                <div className="text-[11px] font-semibold leading-tight line-clamp-2">
-                  {st.name}
+                <div>
+                  <h3 className={`text-base font-bold leading-snug font-heading ${isCurrent ? 'text-white' : 'text-slate-200'}`}>
+                    {st.name}
+                  </h3>
+                  <p className={`text-xs mt-1.5 line-clamp-2 leading-relaxed ${isCurrent ? 'text-blue-100' : 'text-slate-400'}`}>
+                    {st.what}
+                  </p>
                 </div>
               </button>
             );
@@ -165,87 +179,87 @@ export default function MethodologyPage() {
         </div>
 
         {/* Active Stage Deep-Dive Card */}
-        <div className="p-6 rounded-2xl bg-slate-950/90 border border-slate-800 space-y-6">
-          <div className="flex items-center justify-between pb-4 border-b border-slate-800/80">
-            <div className="flex items-center gap-3">
-              <span className="w-8 h-8 rounded-lg bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center font-mono font-bold text-sm">
+        <div className="p-6 sm:p-8 rounded-3xl bg-slate-950/90 border border-slate-800 space-y-6 shadow-xl">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-6 border-b border-slate-800/80">
+            <div className="flex items-center gap-4">
+              <span className="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/30 text-blue-400 flex items-center justify-center font-mono font-bold text-lg shrink-0">
                 {steps[activeStep].code}
               </span>
               <div>
-                <h3 className="text-lg font-bold text-white font-heading">
+                <h3 className="text-xl sm:text-2xl font-bold text-white font-heading">
                   Stage {steps[activeStep].code}: {steps[activeStep].name}
                 </h3>
-                <span className="text-xs text-slate-400">Engineering & Methodological Rationale</span>
+                <span className="text-xs sm:text-sm text-slate-400 font-mono mt-0.5 block">Engineering & Methodological Rationale</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-3">
               <button
                 disabled={activeStep === 0}
                 onClick={() => setActiveStep(prev => Math.max(0, prev - 1))}
-                className="px-2.5 py-1 rounded bg-slate-900 border border-slate-800 text-xs text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-800 cursor-pointer"
+                className="px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 text-xs sm:text-sm text-slate-300 disabled:opacity-30 disabled:cursor-not-allowed hover:bg-slate-800 hover:text-white cursor-pointer font-medium transition-colors"
               >
-                Previous
+                Previous Stage
               </button>
               <button
                 disabled={activeStep === steps.length - 1}
                 onClick={() => setActiveStep(prev => Math.min(steps.length - 1, prev + 1))}
-                className="px-2.5 py-1 rounded bg-blue-600 text-xs text-white disabled:opacity-30 disabled:cursor-not-allowed hover:bg-blue-500 cursor-pointer font-medium"
+                className="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs sm:text-sm text-white disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer font-medium shadow-md shadow-blue-600/30 transition-colors"
               >
-                Next
+                Next Stage
               </button>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 leading-relaxed">
             
             {/* WHAT */}
-            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
+            <div className="p-6 rounded-2xl world-card space-y-3 flex flex-col justify-between">
               <div>
-                <div className="text-[11px] font-mono uppercase font-bold text-blue-400 flex items-center gap-1.5 mb-1.5">
-                  <CheckCircle2 className="w-3.5 h-3.5" />
+                <div className="text-xs font-mono uppercase font-bold text-blue-400 flex items-center gap-2 mb-2 tracking-wider">
+                  <CheckCircle2 className="w-4 h-4 text-blue-400" />
                   <span>1. WHAT ARE WE DOING?</span>
                 </div>
-                <p className="text-slate-300">
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
                   {steps[activeStep].what}
                 </p>
               </div>
             </div>
 
             {/* WHY */}
-            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
+            <div className="p-6 rounded-2xl world-card space-y-3 flex flex-col justify-between">
               <div>
-                <div className="text-[11px] font-mono uppercase font-bold text-indigo-400 flex items-center gap-1.5 mb-1.5">
-                  <ShieldCheck className="w-3.5 h-3.5" />
+                <div className="text-xs font-mono uppercase font-bold text-indigo-400 flex items-center gap-2 mb-2 tracking-wider">
+                  <ShieldCheck className="w-4 h-4 text-indigo-400" />
                   <span>2. WHY ARE WE DOING IT?</span>
                 </div>
-                <p className="text-slate-300">
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
                   {steps[activeStep].why}
                 </p>
               </div>
             </div>
 
             {/* OUTPUT */}
-            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
+            <div className="p-6 rounded-2xl world-card space-y-3 flex flex-col justify-between">
               <div>
-                <div className="text-[11px] font-mono uppercase font-bold text-emerald-400 flex items-center gap-1.5 mb-1.5">
-                  <BarChart3 className="w-3.5 h-3.5" />
+                <div className="text-xs font-mono uppercase font-bold text-emerald-400 flex items-center gap-2 mb-2 tracking-wider">
+                  <BarChart3 className="w-4 h-4 text-emerald-400" />
                   <span>3. TECHNICAL OUTPUT</span>
                 </div>
-                <p className="text-slate-300">
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
                   {steps[activeStep].output}
                 </p>
               </div>
             </div>
 
             {/* LIMITATION */}
-            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
+            <div className="p-6 rounded-2xl world-card space-y-3 flex flex-col justify-between">
               <div>
-                <div className="text-[11px] font-mono uppercase font-bold text-amber-400 flex items-center gap-1.5 mb-1.5">
-                  <Cpu className="w-3.5 h-3.5" />
+                <div className="text-xs font-mono uppercase font-bold text-amber-400 flex items-center gap-2 mb-2 tracking-wider">
+                  <Cpu className="w-4 h-4 text-amber-400" />
                   <span>4. STAGE LIMITATION</span>
                 </div>
-                <p className="text-slate-300">
+                <p className="text-sm text-slate-300 leading-relaxed font-normal">
                   {steps[activeStep].limitation}
                 </p>
               </div>

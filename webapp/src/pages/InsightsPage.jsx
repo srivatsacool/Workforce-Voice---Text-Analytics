@@ -77,91 +77,91 @@ export default function InsightsPage() {
   ];
 
   return (
-    <div className="space-y-8 pb-16">
+    <div className="space-y-8 sm:space-y-10 pb-16">
       
       {/* Header */}
       <div>
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-2">
-          <Lightbulb className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-amber-500/10 text-amber-400 border border-amber-500/20 mb-3">
+          <Lightbulb className="w-4 h-4 text-amber-400" />
           <span>DECISION-READY WORKFORCE SIGNALS</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight">
           Executive Workforce Insights
         </h1>
-        <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">
+        <p className="text-sm sm:text-base text-slate-400 mt-2 max-w-4xl leading-relaxed">
           Synthesized strategic intelligence from 8,785 employee reviews. Every insight adheres strictly to our 4-part governance framework: Observation → Interpretation → Implication → Caution.
         </p>
       </div>
 
       {/* 4 Deep Insights */}
-      <div className="space-y-6">
+      <div className="space-y-8">
         {insights.map((ins) => (
           <div 
             key={ins.id}
-            className="p-6 rounded-2xl world-card space-y-4"
+            className="p-6 sm:p-8 rounded-3xl world-card space-y-6"
           >
             <div className="flex items-center justify-between">
               <span 
-                className="text-xs font-mono font-bold px-2.5 py-0.5 rounded"
+                className="text-xs font-mono font-bold px-3 py-1 rounded-md"
                 style={{ backgroundColor: `${ins.badgeColor}15`, color: ins.badgeColor }}
               >
                 {ins.badge}
               </span>
             </div>
 
-            <h2 className="text-lg font-bold text-white font-heading">
+            <h2 className="text-xl sm:text-2xl font-bold text-white font-heading tracking-tight">
               {ins.title}
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5 leading-relaxed">
               
               {/* Observation */}
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-950/80 border border-slate-800/80 space-y-3 flex flex-col justify-between">
                 <div>
-                  <div className="text-[11px] font-mono uppercase font-bold text-blue-400 flex items-center gap-1.5 mb-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <div className="text-xs font-mono uppercase font-bold text-blue-400 flex items-center gap-2 mb-2 tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-blue-400" />
                     <span>1. OBSERVATION (DATA)</span>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
                     {ins.observation}
                   </p>
                 </div>
               </div>
 
               {/* Interpretation */}
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-950/80 border border-slate-800/80 space-y-3 flex flex-col justify-between">
                 <div>
-                  <div className="text-[11px] font-mono uppercase font-bold text-indigo-400 flex items-center gap-1.5 mb-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
+                  <div className="text-xs font-mono uppercase font-bold text-indigo-400 flex items-center gap-2 mb-2 tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-indigo-400" />
                     <span>2. INTERPRETATION (SIGNAL)</span>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
                     {ins.interpretation}
                   </p>
                 </div>
               </div>
 
               {/* Implication */}
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-950/80 border border-slate-800/80 space-y-3 flex flex-col justify-between">
                 <div>
-                  <div className="text-[11px] font-mono uppercase font-bold text-emerald-400 flex items-center gap-1.5 mb-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
+                  <div className="text-xs font-mono uppercase font-bold text-emerald-400 flex items-center gap-2 mb-2 tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-emerald-400" />
                     <span>3. IMPLICATION (ATTENTION)</span>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
                     {ins.implication}
                   </p>
                 </div>
               </div>
 
               {/* Caution */}
-              <div className="p-4 rounded-xl bg-slate-950/80 border border-slate-800/80 space-y-2 flex flex-col justify-between">
+              <div className="p-5 sm:p-6 rounded-2xl bg-slate-950/80 border border-slate-800/80 space-y-3 flex flex-col justify-between">
                 <div>
-                  <div className="text-[11px] font-mono uppercase font-bold text-amber-400 flex items-center gap-1.5 mb-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                  <div className="text-xs font-mono uppercase font-bold text-amber-400 flex items-center gap-2 mb-2 tracking-wider">
+                    <span className="w-2 h-2 rounded-full bg-amber-400" />
                     <span>4. CAUTION (BOUNDARIES)</span>
                   </div>
-                  <p className="text-slate-300">
+                  <p className="text-sm text-slate-300 leading-relaxed font-normal">
                     {ins.caution}
                   </p>
                 </div>
@@ -173,35 +173,35 @@ export default function InsightsPage() {
       </div>
 
       {/* Strategic Priority Action Matrix */}
-      <div className="p-6 rounded-2xl world-card space-y-4">
+      <div className="p-6 sm:p-8 rounded-3xl world-card space-y-6">
         <div>
-          <h2 className="text-base font-bold text-white font-heading">
+          <h2 className="text-xl sm:text-2xl font-bold text-white font-heading">
             Executive Action Matrix: Targeted Areas for Investigation
           </h2>
-          <p className="text-xs text-slate-400 mt-1">
+          <p className="text-sm text-slate-400 mt-1.5">
             Prioritizing talent interventions based on observed workforce friction and retention impact.
           </p>
         </div>
 
-        <div className="overflow-x-auto">
-          <table className="w-full text-left text-xs text-slate-300">
-            <thead className="text-[11px] uppercase font-mono bg-slate-950/80 text-slate-400">
+        <div className="overflow-x-auto rounded-2xl border border-slate-800/90">
+          <table className="w-full text-left text-sm text-slate-300">
+            <thead className="text-xs uppercase font-mono bg-slate-950 text-slate-400 tracking-wider">
               <tr>
-                <th className="py-2.5 px-3">Priority Level</th>
-                <th className="py-2.5 px-3">Thematic Focus</th>
-                <th className="py-2.5 px-3">Observed Signal</th>
-                <th className="py-2.5 px-3">Recommended Operational Action</th>
-                <th className="py-2.5 px-3">Associated Risk</th>
+                <th className="py-3.5 px-4 font-semibold">Priority Level</th>
+                <th className="py-3.5 px-4 font-semibold">Thematic Focus</th>
+                <th className="py-3.5 px-4 font-semibold">Observed Signal</th>
+                <th className="py-3.5 px-4 font-semibold">Recommended Operational Action</th>
+                <th className="py-3.5 px-4 font-semibold">Associated Risk</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800/70 text-[11px]">
+            <tbody className="divide-y divide-slate-800/70 text-sm">
               {priorityMatrix.map((item, i) => (
-                <tr key={i} className="hover:bg-slate-800/30">
-                  <td className="py-3 px-3 font-semibold text-slate-200">{item.priority}</td>
-                  <td className="py-3 px-3 text-blue-400 font-medium">{item.theme}</td>
-                  <td className="py-3 px-3 text-slate-400">{item.indicator}</td>
-                  <td className="py-3 px-3 text-slate-300">{item.action}</td>
-                  <td className="py-3 px-3 text-rose-400 font-mono">{item.risk}</td>
+                <tr key={i} className="hover:bg-slate-800/30 transition-colors">
+                  <td className="py-4 px-4 font-bold text-slate-100 whitespace-nowrap">{item.priority}</td>
+                  <td className="py-4 px-4 text-blue-400 font-semibold">{item.theme}</td>
+                  <td className="py-4 px-4 text-slate-300 leading-relaxed">{item.indicator}</td>
+                  <td className="py-4 px-4 text-slate-200 leading-relaxed">{item.action}</td>
+                  <td className="py-4 px-4 text-rose-400 font-mono text-xs font-semibold">{item.risk}</td>
                 </tr>
               ))}
             </tbody>

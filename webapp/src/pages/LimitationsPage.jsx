@@ -6,7 +6,8 @@ import {
   Clock, 
   Users, 
   BrainCircuit, 
-  FileText
+  FileText,
+  Building2
 } from 'lucide-react';
 
 export default function LimitationsPage() {
@@ -40,7 +41,7 @@ export default function LimitationsPage() {
     },
     {
       title: '4. Sample Representativeness & Employer Headcount Disparity',
-      icon: Building,
+      icon: Building2,
       badge: 'Entity Balance',
       color: '#8B5CF6',
       problem: 'The dataset contains approximately 100 reviews per employer regardless of whether the employer employs 20,000 workers or 2,000,000 workers (e.g. Walmart vs. specialized tech firms).',
@@ -68,72 +69,74 @@ export default function LimitationsPage() {
   ];
 
   return (
-    <div className="space-y-8 pb-16">
+    <div className="space-y-8 sm:space-y-10 pb-16">
       
       {/* Header */}
       <div>
-        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20 mb-2">
-          <AlertTriangle className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-rose-500/10 text-rose-400 border border-rose-500/20 mb-3">
+          <AlertTriangle className="w-4 h-4 text-rose-400" />
           <span>METHODOLOGICAL INTEGRITY & ETHICAL AI</span>
         </div>
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-white font-heading tracking-tight">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white font-heading tracking-tight">
           Analytical & Methodological Limitations
         </h1>
-        <p className="text-xs sm:text-sm text-slate-400 mt-1 max-w-3xl">
+        <p className="text-sm sm:text-base text-slate-400 mt-2 max-w-4xl leading-relaxed">
           Scientific data science requires explicit transparency regarding dataset constraints, algorithmic limitations, and causal boundaries.
         </p>
       </div>
 
       {/* Core Governance Statement Banner */}
-      <div className="p-6 rounded-2xl bg-slate-900/90 border border-amber-500/30 space-y-3">
-        <div className="flex items-center gap-2 text-amber-400 font-bold text-sm font-heading">
-          <ShieldAlert className="w-5 h-5 shrink-0" />
+      <div className="p-6 sm:p-8 rounded-3xl bg-slate-900/90 border border-amber-500/30 space-y-3 shadow-xl">
+        <div className="flex items-center gap-3 text-amber-400 font-bold text-base sm:text-lg font-heading">
+          <ShieldAlert className="w-6 h-6 shrink-0 text-amber-400" />
           <span>Governance Mandate: Employee Reviews Are Signals, Not Causal Proof</span>
         </div>
-        <p className="text-xs text-slate-300 leading-relaxed">
+        <p className="text-sm sm:text-base text-slate-300 leading-relaxed font-normal">
           Employee-generated text provides valuable organizational intelligence regarding perceived workplace culture and friction. However, public reviews should <strong>never</strong> be used to punish individual managers, make unsupported claims that reviews directly predict operational productivity, or assert causal drivers of organizational turnover without internal confirmatory research.
         </p>
       </div>
 
       {/* 6 In-Depth Limitations */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
         {limitations.map((lim, i) => {
           const Icon = lim.icon;
           return (
             <div 
               key={i}
-              className="p-5 rounded-2xl world-card space-y-4 flex flex-col justify-between"
+              className="p-6 sm:p-8 rounded-3xl world-card space-y-6 flex flex-col justify-between"
             >
-              <div className="space-y-3">
+              <div className="space-y-4">
                 <div className="flex items-center justify-between">
                   <span 
-                    className="text-xs font-mono font-bold px-2 py-0.5 rounded"
+                    className="text-xs font-mono font-bold px-3 py-1 rounded-md"
                     style={{ backgroundColor: `${lim.color}15`, color: lim.color }}
                   >
                     {lim.badge}
                   </span>
-                  <Icon className="w-4 h-4 text-slate-500" />
+                  <div className="p-2 rounded-lg bg-slate-900/80 border border-slate-800">
+                    <Icon className="w-5 h-5 text-slate-400" />
+                  </div>
                 </div>
 
-                <h3 className="text-sm font-bold text-white font-heading">
+                <h3 className="text-lg sm:text-xl font-bold text-white font-heading tracking-tight">
                   {lim.title}
                 </h3>
 
-                <div className="space-y-2 text-xs leading-relaxed">
+                <div className="space-y-3 text-sm leading-relaxed">
                   <div>
-                    <span className="font-semibold text-slate-300">Methodological Constraint: </span>
-                    <span className="text-slate-400">{lim.problem}</span>
+                    <span className="font-semibold text-slate-200">Methodological Constraint: </span>
+                    <span className="text-slate-300 font-normal">{lim.problem}</span>
                   </div>
                   <div>
-                    <span className="font-semibold text-slate-300">Analytical Impact: </span>
-                    <span className="text-slate-400">{lim.impact}</span>
+                    <span className="font-semibold text-slate-200">Analytical Impact: </span>
+                    <span className="text-slate-300 font-normal">{lim.impact}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-[11px] text-slate-300 pt-2">
-                <strong className="text-blue-400">Pipeline Mitigation: </strong>
-                {lim.mitigation}
+              <div className="p-4 sm:p-5 rounded-2xl bg-slate-950/80 border border-slate-800/80 text-xs sm:text-sm text-slate-300 leading-relaxed">
+                <strong className="text-blue-400 font-semibold font-mono uppercase text-xs tracking-wider block mb-1">Pipeline Mitigation:</strong>
+                <p className="text-slate-300 font-normal">{lim.mitigation}</p>
               </div>
             </div>
           );
@@ -141,49 +144,23 @@ export default function LimitationsPage() {
       </div>
 
       {/* Responsible AI Guidance for Enterprise Practitioners */}
-      <div className="p-6 rounded-2xl world-card space-y-3 text-xs leading-relaxed">
-        <h3 className="text-sm font-bold text-white font-heading">
+      <div className="p-6 sm:p-8 rounded-3xl world-card space-y-4">
+        <h3 className="text-lg sm:text-xl font-bold text-white font-heading">
           Guidelines for Enterprise People Analytics Teams
         </h3>
-        <ul className="space-y-2 text-slate-400 list-disc list-inside">
+        <ul className="space-y-3 text-sm sm:text-base text-slate-300 list-disc list-inside leading-relaxed">
           <li>
-            <strong className="text-slate-200">Triangulate Signals:</strong> Always pair external public review insights with internal pulse surveys, stay interviews, and HRIS operational data.
+            <strong className="text-slate-100">Triangulate Signals:</strong> Always pair external public review insights with internal pulse surveys, stay interviews, and HRIS operational data.
           </li>
           <li>
-            <strong className="text-slate-200">Do Not Penalize Units Based on Public Reviews:</strong> Public data lacks verification of active employment status and cannot serve as an HR audit mechanism.
+            <strong className="text-slate-100">Do Not Penalize Units Based on Public Reviews:</strong> Public data lacks verification of active employment status and cannot serve as an HR audit mechanism.
           </li>
           <li>
-            <strong className="text-slate-200">Focus on Systemic Patterns:</strong> Look for recurring operational friction (e.g. shift scheduling complaints in specific geographies) rather than individual complaints.
+            <strong className="text-slate-100">Focus on Systemic Patterns:</strong> Look for recurring operational friction (e.g. shift scheduling complaints in specific geographies) rather than individual complaints.
           </li>
         </ul>
       </div>
 
     </div>
-  );
-}
-
-function Building(props) {
-  return (
-    <svg 
-      {...props} 
-      xmlns="http://www.w3.org/2000/svg" 
-      width="24" 
-      height="24" 
-      viewBox="0 0 24 24" 
-      fill="none" 
-      stroke="currentColor" 
-      strokeWidth="2" 
-      strokeLinecap="round" 
-      strokeLinejoin="round"
-    >
-      <rect width="16" height="20" x="4" y="2" rx="2" ry="2"/>
-      <path d="M9 22v-4h6v4"/>
-      <path d="M8 6h.01"/>
-      <path d="M16 6h.01"/>
-      <path d="M8 10h.01"/>
-      <path d="M16 10h.01"/>
-      <path d="M8 14h.01"/>
-      <path d="M16 14h.01"/>
-    </svg>
   );
 }
