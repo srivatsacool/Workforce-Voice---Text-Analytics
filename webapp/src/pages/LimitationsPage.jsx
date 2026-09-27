@@ -2,12 +2,10 @@ import React from 'react';
 import { 
   AlertTriangle, 
   ShieldAlert, 
-  HelpCircle, 
   Scale, 
   Clock, 
   Users, 
   BrainCircuit, 
-  CheckCircle2,
   FileText
 } from 'lucide-react';
 

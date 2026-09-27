@@ -105,16 +105,30 @@ export default function Footer({ setActiveTab }) {
             <p className="text-slate-400 text-xs mb-3">
               Based on the Kaggle Glassdoor dataset of 90 Top US Employers (8,785 validated employee reviews).
             </p>
-            <a 
-              href="https://www.kaggle.com/datasets/scrapifier/glassdoor-employee-reviews-top-us-employers"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 transition-colors text-xs font-medium"
-            >
-              <Database className="w-3.5 h-3.5" />
-              <span>Kaggle Dataset Source (CC0)</span>
-              <ExternalLink className="w-3 h-3" />
-            </a>
+            <div className="space-y-2">
+              <a 
+                href="https://github.com/srivatsacool/Workforce-Voice---Text-Analytics"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-slate-300 hover:text-white transition-colors text-xs font-mono"
+              >
+                <GitBranch className="w-3.5 h-3.5 text-blue-400" />
+                <span>GitHub Repository</span>
+                <ExternalLink className="w-3 h-3" />
+              </a>
+              <div>
+                <a 
+                  href="https://www.kaggle.com/datasets/scrapifier/glassdoor-employee-reviews-top-us-employers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-blue-400 hover:text-blue-300 transition-colors text-xs font-medium"
+                >
+                  <Database className="w-3.5 h-3.5" />
+                  <span>Kaggle Dataset Source (CC0)</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>

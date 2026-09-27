@@ -9,7 +9,6 @@ import {
   BarChart3, 
   Code2, 
   ShieldCheck, 
-  ArrowDown, 
   CheckCircle2 
 } from 'lucide-react';
 

@@ -1,14 +1,5 @@
 import React from 'react';
-import { 
-  Lightbulb, 
-  AlertTriangle, 
-  TrendingUp, 
-  CheckCircle2, 
-  ArrowRight, 
-  ShieldAlert, 
-  Sliders, 
-  Building 
-} from 'lucide-react';
+import { Lightbulb } from 'lucide-react';
 
 export default function InsightsPage() {
   const insights = [

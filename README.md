@@ -1,12 +1,19 @@
 # 🏢 WORKFORCE INTELLIGENCE ANALYTICS
 > **Using NLP, machine learning, and topic modeling to transform employee-generated text into structured workforce signals and identify recurring organizational themes and potential friction areas.**
 
+<div align="center">
+  <img src="outputs/figures/workforce_hero_visual.jpg" alt="Workforce Intelligence Command Center and Neural Acoustic Signal Architecture" width="100%" />
+</div>
+
 [![Python 3.12](https://img.shields.io/badge/Python-3.12-3776AB.svg?logo=python&logoColor=white)](https://python.org)
 [![React 19](https://img.shields.io/badge/React-19-61DAFB.svg?logo=react&logoColor=black)](https://react.dev)
 [![Vite 8](https://img.shields.io/badge/Vite-8-646CFF.svg?logo=vite&logoColor=white)](https://vite.dev)
 [![Tailwind CSS v4](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC.svg?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
+[![Design System: Impeccable](https://img.shields.io/badge/Design_System-Impeccable-8A2BE2.svg)](DESIGN.md)
+[![AI Imagery: Nano Banana](https://img.shields.io/badge/AI_Imagery-Nano_Banana-FFB800.svg)](#-visual-intelligence-showcase)
+[![GitHub Repository](https://img.shields.io/badge/GitHub-Repository-181717.svg?logo=github)](https://github.com/srivatsacool/Workforce-Voice---Text-Analytics)
 [![License: CC0-1.0](https://img.shields.io/badge/License-CC0_1.0-lightgrey.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
-[![Cloudflare Pages](https://img.shields.io/badge/Deploy-Cloudflare_Pages-F38020.svg?logo=cloudflare&logoColor=white)](https://pages.cloudflare.com)
+
 
 ---
 
@@ -69,10 +76,47 @@ flowchart TD
 
 ---
 
+## 🎨 Impeccable Design World & Product Truth
+
+To transcend generic "AI-slop" dashboard defaults (e.g. purple gradient mush, unmotivated glassmorphic blur, and low-density spacing), this platform was shaped using the **[Impeccable Design Methodology](https://impeccable.style)**:
+* **Product Context ([`PRODUCT.md`](PRODUCT.md))**: Defines durable product truth, target executive personas (CHRO, VP Operations, Analytics Leads), analytical mechanisms, and ethical boundaries.
+* **Design System ([`DESIGN.md`](DESIGN.md))**: Establishes the **"Executive Signal Intelligence"** visual thesis—combining deep obsidian canvases, hairline boundary borders, electric cobalt signals, and semantic amber/crimson friction indicators.
+* **Typographic Hierarchy**: High-contrast pairing of `Plus Jakarta Sans` for display headers, `Inter` for explanatory prose, and `JetBrains Mono` for tabular metrics and analytical confidence intervals.
+
+---
+
+## 🖼️ Visual Intelligence Showcase (Nano Banana Imagery)
+
+The project leverages high-resolution conceptual and analytical imagery generated via **Google's Imagen / Nano Banana** model family to illuminate key empirical findings:
+
+### 1. The Rating–Text Divergence (Divergent Voice)
+<div align="center">
+  <img src="outputs/figures/signal_divergence_matrix.jpg" alt="Rating-Text Divergence Holographic Prism" width="90%" />
+</div>
+
+> **Core Empirical Finding:** Scalar star scores conceal acute operational realities. While 51.4% of reviews exhibit aligned high ratings and positive text, **38.4% of 1-star reviews contain net-positive text** (collegial buffering for team camaraderie despite institutional pay/shift frustration), and **8.2% of 5-star reviews contain acute negative operational warnings**.
+
+### 2. Six Latent Topic Clusters (LDA Unsupervised Landscape)
+<div align="center">
+  <img src="outputs/figures/topic_clusters_visual.jpg" alt="Six Latent Topic Clusters Landscape" width="90%" />
+</div>
+
+> **Unsupervised Thematic Discovery ($k=6$):** Latent Dirichlet Allocation autonomously clusters 8,785 unstructured narratives into 6 operational domains:
+> 1. **Compensation & Benefits** (Market wage competitiveness, healthcare)
+> 2. **Shift Operations & Scheduling** (Hourly schedule predictability, overtime volatility)
+> 3. **Frontline Supervision & Leadership** (Managerial communication, fairness)
+> 4. **Team Culture Anchor** (Peer camaraderie, collegial support)
+> 5. **Career Mobility** (Internal advancement paths, training opportunities)
+> 6. **Work-Life Balance** (Burnout mitigation, flexibility)
+
+---
+
 ## 📂 Repository Structure
 
 ```
 workforce-intelligence/
+├── PRODUCT.md                                  # Impeccable durable product truth & mission
+├── DESIGN.md                                   # "Executive Signal Intelligence" design system tokens
 ├── notebooks/                                  # 8 Fully Executed & Documented Notebooks
 │   ├── 01_data_understanding.ipynb             # Ingestion, schema, missing-value audit
 │   ├── 02_data_cleaning_eda.ipynb              # Deduplication, date parsing, length dynamics
@@ -98,7 +142,10 @@ workforce-intelligence/
 │   └── tfidf_vectorizer.joblib                 # Serialized TF-IDF feature extractor
 │
 ├── outputs/
-│   ├── figures/                                # 10 High-DPI Publication-Grade Figures
+│   ├── figures/                                # Publication Figures & Nano Banana AI Visuals
+│   │   ├── workforce_hero_visual.jpg           # Command center & neural acoustic lattice
+│   │   ├── signal_divergence_matrix.jpg        # Rating vs text divergence holographic prism
+│   │   ├── topic_clusters_visual.jpg           # 6 latent LDA topic clusters landscape
 │   │   ├── 01_rating_distribution.png
 │   │   ├── 02_missing_values_heatmap.png
 │   │   ├── 04_sentiment_distribution.png

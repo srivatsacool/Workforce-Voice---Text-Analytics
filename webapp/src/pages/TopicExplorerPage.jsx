@@ -2,26 +2,18 @@ import React, { useState } from 'react';
 import { 
   Layers, 
   Star, 
-  Sparkles, 
-  TrendingUp, 
   MessageSquare, 
-  Building2, 
-  ChevronRight, 
   Hash,
   CheckCircle2,
   AlertCircle
 } from 'lucide-react';
 import topicsData from '../data/topics.json';
-import companiesData from '../data/companies.json';
 import sampleReviews from '../data/sample_reviews.json';
 
 export default function TopicExplorerPage() {
   const [selectedTopicId, setSelectedTopicId] = useState(0);
 
   const currentTopic = topicsData.find(t => t.topic_id === selectedTopicId) || topicsData[0];
-
-  // Find companies that over-index on this topic
-  const matchingCompanies = companiesData.filter(c => c.dominant_topic === currentTopic.short_name);
 
   // Sample reviews for this topic
   const topicReviews = sampleReviews.filter(r => r.dominant_topic_name === currentTopic.short_name);

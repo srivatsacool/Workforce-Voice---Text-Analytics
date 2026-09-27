@@ -1,21 +1,15 @@
 import React, { useState } from 'react';
 import { 
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell, ScatterChart, Scatter, ZAxis
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer
 } from 'recharts';
 import { 
   HeartHandshake, 
-  HelpCircle, 
   TrendingUp, 
   TrendingDown, 
-  Sparkles, 
-  AlertCircle,
-  CheckCircle2,
-  Sliders,
   Scale
 } from 'lucide-react';
 
 import kpiData from '../data/kpis.json';
-import companiesData from '../data/companies.json';
 import ratingSentimentData from '../data/rating_sentiment.json';
 
 export default function SentimentExplorerPage() {
@@ -184,20 +178,25 @@ export default function SentimentExplorerPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {quadrants.map((quad) => (
-            <div
-              key={quad.id}
-              className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-slate-700 transition-all space-y-3"
-            >
-              <div className="flex items-center justify-between">
-                <span 
-                  className="text-xs font-mono font-bold px-2 py-0.5 rounded"
-                  style={{ backgroundColor: `${quad.color}15`, color: quad.color }}
-                >
-                  {quad.badge}
-                </span>
-                <span className="text-sm font-bold text-white font-heading">{quad.sharePct}</span>
-              </div>
+          {quadrants.map((quad) => {
+            const isSelected = selectedQuadrant === quad.id;
+            return (
+              <div
+                key={quad.id}
+                onClick={() => setSelectedQuadrant(isSelected ? 'ALL' : quad.id)}
+                className={`p-5 rounded-2xl bg-slate-900/70 border transition-all cursor-pointer space-y-3 ${
+                  isSelected ? 'border-blue-500 shadow-md ring-1 ring-blue-500/50' : 'border-slate-800 hover:border-slate-700'
+                }`}
+              >
+                <div className="flex items-center justify-between">
+                  <span 
+                    className="text-xs font-mono font-bold px-2 py-0.5 rounded"
+                    style={{ backgroundColor: `${quad.color}15`, color: quad.color }}
+                  >
+                    {quad.badge}
+                  </span>
+                  <span className="text-sm font-bold text-white font-heading">{quad.sharePct}</span>
+                </div>
 
               <h3 className="text-base font-bold text-white font-heading">
                 {quad.title}
@@ -221,9 +220,10 @@ export default function SentimentExplorerPage() {
                 {quad.implication}
               </div>
             </div>
-          ))}
-        </div>
+          );
+        })}
       </div>
+    </div>
 
       {/* ML Lexical Drivers: TF-IDF Coefficients & Model Performance */}
       <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-5">

@@ -1,21 +1,13 @@
 import React, { useState } from 'react';
 import { 
   Building2, 
-  Star, 
-  Search, 
-  Layers, 
-  Sparkles, 
-  BarChart2, 
-  ShieldCheck, 
-  Info,
-  Briefcase
+  Search
 } from 'lucide-react';
 import { 
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, Cell 
 } from 'recharts';
 
 import companiesData from '../data/companies.json';
-import topicsData from '../data/topics.json';
 import sampleReviews from '../data/sample_reviews.json';
 
 export default function CompanySignalsPage() {
