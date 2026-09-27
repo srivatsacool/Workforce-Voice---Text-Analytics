@@ -2,6 +2,8 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import LandingPage from './pages/LandingPage';
+import { WorldProvider } from './context/WorldContext';
+import { useWorldTheme } from './context/worldTheme';
 
 // Route-level lazy loading to optimize initial page performance and bundle size
 const DashboardPage = lazy(() => import('./pages/DashboardPage'));
@@ -16,13 +18,15 @@ const WorldStudioPage = lazy(() => import('./pages/WorldStudioPage'));
 function PageLoader() {
   return (
     <div className="py-24 flex flex-col items-center justify-center space-y-3">
-      <div className="w-8 h-8 border-2 border-blue-500 border-t-transparent rounded-full animate-spin" />
+      <div className="w-8 h-8 border-2 border-cyan-500 border-t-transparent rounded-full animate-spin" />
       <span className="text-xs font-mono text-slate-400">Loading workforce intelligence module...</span>
     </div>
   );
 }
 
-export default function App() {
+function AppContent() {
+  const { world } = useWorldTheme();
+
   const getInitialTab = () => {
     const hash = window.location.hash.replace('#', '');
     const validTabs = ['landing', 'dashboard', 'sentiment', 'topics', 'companies', 'worlds', 'methodology', 'insights', 'limitations'];
@@ -51,8 +55,12 @@ export default function App() {
   }, [darkMode]);
 
   return (
-    <div className={`min-h-screen flex flex-col ${darkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'}`}>
-      
+    <div 
+      data-world={world}
+      className={`min-h-screen flex flex-col transition-colors duration-300 ${
+        darkMode ? 'dark bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
+      }`}
+    >
       {/* Top Navigation */}
       <Navbar 
         activeTab={activeTab} 
@@ -78,7 +86,14 @@ export default function App() {
 
       {/* Footer */}
       <Footer setActiveTab={setActiveTab} />
-
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <WorldProvider>
+      <AppContent />
+    </WorldProvider>
   );
 }

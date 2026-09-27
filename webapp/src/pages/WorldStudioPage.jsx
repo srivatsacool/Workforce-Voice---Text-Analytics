@@ -10,6 +10,7 @@ import {
   Maximize2,
   X
 } from 'lucide-react';
+import { useWorldTheme } from '../context/worldTheme';
 
 import worldEditorialUi from '../assets/world_editorial_intelligence.jpg';
 import editorialBriefingMatrix from '../assets/editorial_briefing_matrix.jpg';
@@ -19,12 +20,12 @@ import worldBiomorphicUi from '../assets/world_biomorphic_voice.jpg';
 import biomorphicSentimentSphere from '../assets/biomorphic_sentiment_sphere.jpg';
 
 export default function WorldStudioPage({ setActiveTab }) {
-  const [activeWorld, setActiveWorld] = useState('world2');
+  const { world, setWorld } = useWorldTheme();
   const [modalImage, setModalImage] = useState(null);
 
   const worlds = {
-    world1: {
-      id: 'world1',
+    editorial: {
+      id: 'editorial',
       code: '01',
       title: 'The Editorial Intelligence Gazette',
       subtitle: 'Elite Financial Times & Bloomberg Whitepaper Aesthetic',
@@ -51,8 +52,8 @@ export default function WorldStudioPage({ setActiveTab }) {
       ],
       idealFor: 'Executive Boardroom reviews, C-Suite quarterly briefs, policy whitepapers.'
     },
-    world2: {
-      id: 'world2',
+    cybernetic: {
+      id: 'cybernetic',
       code: '02',
       title: 'Cybernetic Deep Slate Operations Matrix',
       subtitle: 'NASA Flight Control & High-Density Telemetry Console',
@@ -79,8 +80,8 @@ export default function WorldStudioPage({ setActiveTab }) {
       ],
       idealFor: 'Real-time shift management, operations directors, continuous workforce monitoring.'
     },
-    world3: {
-      id: 'world3',
+    biomorphic: {
+      id: 'biomorphic',
       code: '03',
       title: 'Biomorphic Neural Voice Canvas',
       subtitle: 'Organic Deep Tech & Luminous Emotion Soundwaves',
@@ -109,7 +110,7 @@ export default function WorldStudioPage({ setActiveTab }) {
     }
   };
 
-  const current = worlds[activeWorld];
+  const current = worlds[world] || worlds.cybernetic;
 
   return (
     <div className="space-y-12 pb-20">
@@ -132,11 +133,11 @@ export default function WorldStudioPage({ setActiveTab }) {
       <div className="flex justify-center px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 max-w-4xl w-full p-1.5 rounded-2xl bg-slate-900/90 border border-slate-800 shadow-xl">
           {Object.values(worlds).map((w) => {
-            const isSelected = activeWorld === w.id;
+            const isSelected = world === w.id;
             return (
               <button
                 key={w.id}
-                onClick={() => setActiveWorld(w.id)}
+                onClick={() => setWorld(w.id)}
                 className={`p-3.5 rounded-xl text-left transition-all cursor-pointer flex flex-col justify-between ${
                   isSelected
                     ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/30 ring-1 ring-blue-400/40'
@@ -319,7 +320,8 @@ export default function WorldStudioPage({ setActiveTab }) {
                 onClick={() => { setActiveTab('dashboard'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
                 className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs transition-all shadow-md cursor-pointer"
               >
-                <span>Experience This World in Dashboard</span>
+                <Check className="w-4 h-4 text-emerald-300" />
+                <span>Active Globally • Launch Dashboard View</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
             </div>

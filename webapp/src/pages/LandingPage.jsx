@@ -3,7 +3,6 @@ import {
   ArrowRight, 
   Sparkles, 
   BarChart3, 
-  Cpu, 
   Layers, 
   MessageSquare, 
   FileText, 
@@ -21,8 +20,10 @@ import kpiData from '../data/kpis.json';
 import workforceHeroVisual from '../assets/workforce_hero_visual.jpg';
 import divergenceSignalMatrix from '../assets/signal_divergence_matrix.jpg';
 import topicClustersVisual from '../assets/topic_clusters_visual.jpg';
+import { useWorldTheme } from '../context/worldTheme';
 
 export default function LandingPage({ setActiveTab }) {
+  const { activeWorld } = useWorldTheme();
   const [activeVisualTab, setActiveVisualTab] = useState('divergence');
 
   const pipelineSteps = [
@@ -50,18 +51,18 @@ export default function LandingPage({ setActiveTab }) {
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[38rem] h-[38rem] bg-blue-600/10 blur-[140px] rounded-full pointer-events-none -z-10" />
 
         {/* Live System Status Pill */}
-        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-slate-900/90 dark:bg-slate-900/90 border border-slate-800 text-blue-400 mb-6 shadow-sm">
+        <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full text-xs font-mono font-medium bg-slate-900/90 dark:bg-slate-900/90 border border-slate-800 text-slate-200 mb-6 shadow-sm">
           <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
           </span>
-          <span className="tracking-wide">EXECUTIVE WORKFORCE SIGNALS • 90 TOP US EMPLOYERS</span>
+          <span className="tracking-wide">WORLD {activeWorld.code}: {activeWorld.name.toUpperCase()} • 90 US EMPLOYERS</span>
         </div>
 
         {/* Hero Title */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-slate-900 dark:text-white font-heading uppercase leading-none mb-6">
           WORKFORCE <br />
-          <span className="bg-gradient-to-r from-blue-500 via-indigo-400 to-cyan-400 bg-clip-text text-transparent">
+          <span className={`bg-gradient-to-r ${activeWorld.heroGradient} bg-clip-text text-transparent`}>
             INTELLIGENCE
           </span>
         </h1>
@@ -80,18 +81,18 @@ export default function LandingPage({ setActiveTab }) {
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <button
             onClick={() => { setActiveTab('dashboard'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/25 hover:shadow-blue-500/35 transition-all cursor-pointer"
+            className={`flex items-center gap-2 px-6 py-3 rounded-xl ${activeWorld.buttonPrimary} font-semibold text-sm transition-all cursor-pointer`}
           >
             <span>Explore Workforce Signals</span>
             <ArrowRight className="w-4 h-4" />
           </button>
 
           <button
-            onClick={() => { setActiveTab('methodology'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 hover:text-white font-medium text-sm border border-slate-800 transition-all cursor-pointer"
+            onClick={() => { setActiveTab('worlds'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className={`flex items-center gap-2 px-6 py-3 rounded-xl ${activeWorld.buttonOutline} font-medium text-sm transition-all cursor-pointer`}
           >
-            <span>Analytical Methodology</span>
-            <Cpu className="w-4 h-4 text-slate-400" />
+            <Sparkles className="w-4 h-4" />
+            <span>Switch Design World</span>
           </button>
         </div>
 
@@ -137,7 +138,7 @@ export default function LandingPage({ setActiveTab }) {
           {highlights.map((h, i) => (
             <div 
               key={i} 
-              className="p-5 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 backdrop-blur-sm shadow-sm hover:border-blue-500/40 transition-all duration-200"
+              className="p-5 rounded-2xl world-card backdrop-blur-sm shadow-sm transition-all duration-200"
             >
               <div className="flex items-center justify-between text-[10px] font-mono text-slate-500 dark:text-slate-400 mb-2">
                 <span>{h.metric}</span>
@@ -231,7 +232,7 @@ export default function LandingPage({ setActiveTab }) {
 
         {/* Visual Showcase Card */}
         {activeVisualTab === 'divergence' ? (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 rounded-2xl world-card shadow-sm items-center">
             <div className="lg:col-span-7 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
               <img 
                 src={divergenceSignalMatrix} 
@@ -269,7 +270,7 @@ export default function LandingPage({ setActiveTab }) {
             </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 rounded-2xl bg-white dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/90 shadow-sm items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 p-6 rounded-2xl world-card shadow-sm items-center">
             <div className="lg:col-span-7 rounded-xl overflow-hidden border border-slate-800 bg-slate-950">
               <img 
                 src={topicClustersVisual} 
@@ -327,7 +328,7 @@ export default function LandingPage({ setActiveTab }) {
             return (
               <div 
                 key={idx}
-                className="relative p-4 rounded-xl bg-white dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/80 hover:border-blue-500/40 transition-colors flex flex-col justify-between group shadow-sm text-left"
+                className="relative p-4 rounded-xl world-card hover:border-blue-500/40 transition-colors flex flex-col justify-between group shadow-sm text-left"
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
@@ -353,7 +354,7 @@ export default function LandingPage({ setActiveTab }) {
       <section className="max-w-6xl mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
           
-          <div className="p-6 rounded-2xl bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-3">
+          <div className="p-6 rounded-2xl world-card shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-lg bg-rose-600/10 border border-rose-500/20 flex items-center justify-center text-rose-400">
               <Flame className="w-5 h-5" />
             </div>
@@ -365,7 +366,7 @@ export default function LandingPage({ setActiveTab }) {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-3">
+          <div className="p-6 rounded-2xl world-card shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-lg bg-emerald-600/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
               <ShieldCheck className="w-5 h-5" />
             </div>
@@ -377,7 +378,7 @@ export default function LandingPage({ setActiveTab }) {
             </p>
           </div>
 
-          <div className="p-6 rounded-2xl bg-white dark:bg-gradient-to-b dark:from-slate-900 dark:to-slate-950 border border-slate-200 dark:border-slate-800/90 shadow-sm space-y-3">
+          <div className="p-6 rounded-2xl world-card shadow-sm space-y-3">
             <div className="w-10 h-10 rounded-lg bg-blue-600/10 border border-blue-500/20 flex items-center justify-center text-blue-400">
               <ShieldAlert className="w-5 h-5" />
             </div>

@@ -86,19 +86,19 @@ export default function SentimentExplorerPage() {
 
       {/* Metric Highlight Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+        <div className="p-4 rounded-xl world-card">
           <div className="text-xs text-slate-400 font-medium">Pros Sentiment Average</div>
           <div className="text-2xl font-bold text-emerald-400 font-heading mt-1">+0.65</div>
           <div className="text-[11px] text-slate-500 mt-0.5">Predominantly enthusiastic praise</div>
         </div>
 
-        <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+        <div className="p-4 rounded-xl world-card">
           <div className="text-xs text-slate-400 font-medium">Cons Sentiment Average</div>
           <div className="text-2xl font-bold text-rose-400 font-heading mt-1">-0.26</div>
           <div className="text-[11px] text-slate-500 mt-0.5">Constructive & critical grievances</div>
         </div>
 
-        <div className="p-4 rounded-xl bg-slate-900/70 border border-slate-800">
+        <div className="p-4 rounded-xl world-card">
           <div className="text-xs text-slate-400 font-medium">Full Review Net Compound</div>
           <div className="text-2xl font-bold text-blue-400 font-heading mt-1">+0.48</div>
           <div className="text-[11px] text-slate-500 mt-0.5">Median: +0.62 (Moderate positive lean)</div>
@@ -106,7 +106,7 @@ export default function SentimentExplorerPage() {
       </div>
 
       {/* Rating vs Sentiment Stacked Distribution */}
-      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4">
+      <div className="p-6 rounded-2xl world-card space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
           <div>
             <h2 className="text-base font-bold text-white font-heading">
@@ -226,7 +226,7 @@ export default function SentimentExplorerPage() {
     </div>
 
       {/* ML Lexical Drivers: TF-IDF Coefficients & Model Performance */}
-      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-5">
+      <div className="p-6 rounded-2xl world-card space-y-5">
         <div>
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
             <div>

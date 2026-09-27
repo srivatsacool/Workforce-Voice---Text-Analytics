@@ -98,7 +98,7 @@ export default function InsightsPage() {
         {insights.map((ins) => (
           <div 
             key={ins.id}
-            className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4"
+            className="p-6 rounded-2xl world-card space-y-4"
           >
             <div className="flex items-center justify-between">
               <span 
@@ -173,7 +173,7 @@ export default function InsightsPage() {
       </div>
 
       {/* Strategic Priority Action Matrix */}
-      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4">
+      <div className="p-6 rounded-2xl world-card space-y-4">
         <div>
           <h2 className="text-base font-bold text-white font-heading">
             Executive Action Matrix: Targeted Areas for Investigation

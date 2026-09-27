@@ -46,7 +46,7 @@ export default function TopicExplorerPage() {
               className={`p-5 rounded-2xl border transition-all cursor-pointer flex flex-col justify-between ${
                 isSelected
                   ? 'bg-slate-900 border-blue-500 shadow-lg shadow-blue-500/10 ring-1 ring-blue-500/30'
-                  : 'bg-slate-900/60 border-slate-800/80 hover:border-slate-700 hover:bg-slate-900/90'
+                  : 'world-card hover:border-slate-700'
               }`}
             >
               <div className="space-y-3">
@@ -107,7 +107,7 @@ export default function TopicExplorerPage() {
       </div>
 
       {/* Selected Topic Deep-Dive Section */}
-      <div className="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-6">
+      <div className="p-6 rounded-2xl world-card space-y-6">
         
         {/* Title & Badge */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800">

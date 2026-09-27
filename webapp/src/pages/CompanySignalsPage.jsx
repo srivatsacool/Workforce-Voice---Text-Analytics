@@ -70,7 +70,7 @@ export default function CompanySignalsPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Left Column: Company Directory Search & Select */}
-        <div className="p-4 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-3">
+        <div className="p-4 rounded-2xl world-card space-y-3">
           <div className="flex items-center justify-between">
             <h2 className="text-xs font-bold text-slate-200 uppercase tracking-wider">
               Company-Level Signal Profile ({filteredCompanyList.length})
@@ -133,7 +133,7 @@ export default function CompanySignalsPage() {
         <div className="lg:col-span-2 space-y-6">
           
           {/* Company Profile Header Banner */}
-          <div className="p-6 rounded-2xl bg-gradient-to-r from-slate-900 to-slate-950 border border-slate-800 space-y-4">
+          <div className="p-6 rounded-2xl world-card space-y-4">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
                 <span className="text-[10px] font-mono text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded border border-blue-500/20 uppercase font-semibold">
@@ -186,7 +186,7 @@ export default function CompanySignalsPage() {
           </div>
 
           {/* Sub-Dimension Ratings Grid */}
-          <div className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4">
+          <div className="p-5 rounded-2xl world-card space-y-4">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-bold text-white font-heading">
@@ -224,7 +224,7 @@ export default function CompanySignalsPage() {
           </div>
 
           {/* Sentiment Breakdown Chart */}
-          <div className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-3">
+          <div className="p-5 rounded-2xl world-card space-y-3">
             <h3 className="text-sm font-bold text-white font-heading">
               Textual Sentiment Breakdown for {company.employer_name}
             </h3>
@@ -253,7 +253,7 @@ export default function CompanySignalsPage() {
 
           {/* Evidence Quotes */}
           {companyReviews.length > 0 && (
-            <div className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-3">
+            <div className="p-5 rounded-2xl world-card space-y-3">
               <h3 className="text-sm font-bold text-white font-heading">
                 Direct Employee Evidence ({company.employer_name})
               </h3>

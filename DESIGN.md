@@ -1,77 +1,114 @@
-# 🎨 Workforce Intelligence Design System: "Executive Signal Intelligence"
+# 🎨 Workforce Intelligence Design System: Multi-World Architecture
 
-> **Durable visual design system built according to Impeccable principles. Defines the visual identity, tokens, component grammar, and craft floor for the Workforce Voice & Text Analytics web application.**
+> **Durable visual design system built according to Impeccable principles. Defines the visual identity, tokens, component grammar, multi-world architecture, and craft floor for the Workforce Voice & Text Analytics web application.**
 
 ---
 
-## 1. Visual World Thesis: "Executive Signal Intelligence"
+## 1. Visual World Philosophy: Dynamic 3-World Intelligence
 This interface rejects generic "AI-generated" dashboard cliches (purple-magenta neon soup, purposeless glassmorphic blur, low-density card padding, generic corporate stock illustration).
 
-Instead, it inhabits the visual world of an **operations intelligence command center and high-resolution decision console**:
-* **Rigor over fluff**: High data density, crisp geometric alignment, and explicit mathematical notations.
-* **Semantic chromatic fidelity**: Color is used strictly to signal meaning, divergence, and friction levels—never as decorative wallpaper.
-* **Tactile and responsive**: Fine hairline borders (`border-slate-800/80`), subtle ambient glow, tabular numeric font alignments, and responsive cross-filtering.
+Instead of forcing a single uniform appearance, the web application features a **dynamic 3-world architectural theme system** that can be toggled in real-time across all 8 application pages:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                      DYNAMIC 3-WORLD SYSTEM                            │
+├────────────────────┬─────────────────────────────┬─────────────────────┤
+│ 📜 WORLD 01        │ ⚡ WORLD 02                 │ 🧬 WORLD 03         │
+│ Editorial Gazette  │ Cybernetic Matrix           │ Biomorphic Canvas   │
+│ Financial Times /  │ NASA Flight Control /       │ Neural Acoustics /  │
+│ Bloomberg Briefing │ Operations Telemetry Deck   │ Bioluminescent Wave │
+└────────────────────┴─────────────────────────────┴─────────────────────┘
+```
 
 ---
 
-## 2. Color Strategy & Semantic Palette
+## 2. World Specifications & Tokens
 
-### Palette Classification: **Committed Precision Palette**
-
-| Token Role | Hex Code | Visual Meaning & Usage |
-|---|---|---|
-| **Canvas Deep (Dark)** | `#090D16` | Main background, obsidian slate providing deep contrast |
-| **Surface Dark** | `#0F172A` | Card backgrounds, elevated panels, modal backgrounds |
-| **Surface Elevated** | `#1E293B` | Interactive elements, dropdown menus, table headers |
-| **Hairline Border** | `#334155` | 1px subtle boundary defining spatial compartments |
-| **Primary Signal** | `#3B82F6` | Primary action, active tabs, verified analytics badges |
-| **Data Stream (Cyan)** | `#06B6D4` | Topic vectors, pipeline flows, neutral/NLP tokens |
-| **Friction / Alert (Amber)** | `#F59E0B` | Operational friction, scheduling complaints, temporal caution |
-| **Negative Sentiment (Crimson)** | `#EF4444` | Negative sentiment valence, supervisory breakdown |
-| **Positive Sentiment (Emerald)** | `#10B981` | Positive text valence, collegial culture, retention anchor |
-| **Text Primary (Dark)** | `#F8FAFC` | Main headings, critical KPIs, high-contrast labels |
-| **Text Secondary (Dark)** | `#94A3B8` | Subtitles, descriptions, contextual operational framing |
-| **Canvas Clean (Light)** | `#F8FAFC` | Light mode background |
-| **Surface Clean (Light)** | `#FFFFFF` | Light mode card surfaces |
+### World 01: The Editorial Intelligence Gazette
+* **Aesthetic Anchor**: *Financial Times Lex Column*, *The Economist Briefing*, *Palantir Intelligence Memo*.
+* **Audience**: Executive Boardrooms, C-Suite quarterly briefs, policy whitepapers.
+* **Palette**:
+  * Ground: `#F8F6F0` (Alabaster Parchment) in light mode; `#0E131C` (Midnight Charcoal Ink) in dark mode.
+  * Primary Accent: `#E03131` (Vermillion Alert)
+  * Secondary Accent: `#D97706` (Burnished Gold / Copper)
+  * Anchor Signal: `#2B8A3E` (British Racing Green)
+* **Typography**:
+  * Display / Headings: `Newsreader`, `Georgia`, serif (`font-editorial`)
+  * Data / Metrics: `JetBrains Mono` (tabular numbers)
+  * Explanatory Body: `Inter` (clean Swiss body)
+* **Card Craft**: Razor-sharp `border-slate-800/20`, minimal 0.375rem corner radius, crisp hairline dividers, newsprint margins.
 
 ---
 
-## 3. Typography & Hierarchy System
+### World 02: Cybernetic Deep Slate Operations Matrix
+* **Aesthetic Anchor**: *NASA Flight Operations Control*, *Bloomberg Terminal 2.0*, *Tactical Operations Center*.
+* **Audience**: Shift operations managers, workforce scheduling directors, real-time monitoring leads.
+* **Palette**:
+  * Ground: `#0B0F19` (Deep Titanium Slate / Obsidian)
+  * Primary Accent: `#38BDF8` (Electric Laser Cyan)
+  * Friction Alert: `#F59E0B` (Phosphor Amber Caution)
+  * Status Signal: `#10B981` (Telemetry Emerald)
+* **Typography**:
+  * Display / Headings: `Space Grotesk`, `Plus Jakarta Sans` (`font-cybernetic`)
+  * Data / Metrics: `JetBrains Mono` (telemetry monospace)
+  * Explanatory Body: `Inter` (high-density data matrix)
+* **Card Craft**: High-density 0.625rem radius, cyan phosphor borders (`border-cyan-500/25`), subtle ambient glows (`glow-cyan`), technical crosshairs, and live telemetry badges.
 
-* **Display & Primary Headings**: `Plus Jakarta Sans` (weights: 700, 800)
-  - Uppercase tracked tracking: `tracking-tight` or `tracking-widest` for section kickers.
-  - Sizing: `text-4xl` to `text-6xl` for hero, `text-2xl` for page headers, `text-base` for card titles.
-* **Body & Explanatory Prose**: `Inter` (weights: 400, 500, 600)
-  - Clear line height (`leading-relaxed`), optimal line measure (max 65–75 characters for readability).
-* **Metrics, Tokens & Analytical Values**: `JetBrains Mono` (weights: 500, 700)
-  - Used for sample sizes, percentages, model accuracies, topic IDs, and date timestamps.
-  - Tabular numbers enabled (`font-mono tracking-tight`) to ensure clean vertical alignment across tables and metric grids.
+---
+
+### World 03: Biomorphic Neural Voice Canvas
+* **Aesthetic Anchor**: *Acoustic Sound Physics*, *Neural Lattice Cartography*, *Bioluminescent Deep Ocean*.
+* **Audience**: People Analytics leads, qualitative voice deep-dives, empathy diagnostics, retention strategists.
+* **Palette**:
+  * Ground: `#050B14` (Abyssal Midnight Blue)
+  * Primary Accent: `#00F2FE` (Bioluminescent Cyan)
+  * Emotion Pulse: `#7928CA` (Ultraviolet Resonance)
+  * Valence Accent: `#F43F5E` (Warm Rose Resonance)
+* **Typography**:
+  * Display / Headings: `Plus Jakarta Sans` (`font-biomorphic`)
+  * Data / Metrics: `JetBrains Mono` (technical harmonic)
+  * Explanatory Body: `Inter` (empathetic narrative sans)
+* **Card Craft**: Fluid 1.125rem radius, frosted glassmorphism (`backdrop-blur-md`), dual-layer cyan/violet edge refraction glow, soundwave gradients.
+
+---
+
+## 3. Real-Time Switcher & CSS Variables Architecture
+
+The design system implements a global context (`WorldProvider` in `src/context/WorldContext.jsx` and `src/context/worldTheme.js`):
+1. **Attribute Binding**: Sets `[data-world="editorial" | "cybernetic" | "biomorphic"]` directly on `document.documentElement` and the main App root container.
+2. **Persistence**: Saves user choice in `localStorage.getItem('wi_active_world')` defaulting to `'cybernetic'`.
+3. **CSS Class Mapping**:
+   * `.world-card`: Automatically adapts border radius, surface color, backdrop blur, border color, and shadow based on the active `[data-world]`.
+   * `.font-heading`: Dynamically inherits Newsreader serif in Editorial mode, Space Grotesk in Cybernetic mode, and Plus Jakarta Sans in Biomorphic mode.
+4. **Dynamic Chart Theming**:
+   * Charts consume `activeWorld.chartPalette` and `activeWorld.accentColor` dynamically, recoloring Recharts pies, bars, and breakdowns in real-time.
+5. **Navbar Controls**:
+   * Segmented pill toggle located directly in the header and mobile drawer for instant 1-click world switching across all 8 pages.
 
 ---
 
 ## 4. Component Anatomy & Craft Floor
 
 ### A. Metric & KPI Stat Cards
-* **Container**: `bg-slate-900/60 dark:bg-slate-900/60 bg-white border border-slate-800/80 rounded-xl p-4 transition-all duration-200 hover:border-blue-500/30`
+* **Container**: `p-4 rounded-xl world-card`
 * **Hierarchy**:
   1. Header kicker: tiny uppercase mono label (`text-[10px] font-mono text-slate-400`)
-  2. Large primary value: bold tabular display (`text-3xl font-extrabold text-white font-heading`)
-  3. Context subtext: operational nuance (`text-xs text-slate-400 mt-1`)
+  2. Large primary value: bold tabular display (`text-2xl font-extrabold font-heading`)
+  3. Context subtext: operational nuance (`text-[10px] text-slate-400 mt-0.5`)
 
 ### B. Signal Divergence Callouts
 * Highlighting the critical disconnect between 5-star ratings and negative text or 1-star ratings and positive text.
 * Dual-tone pill indicator with explicit percentage ratios and qualitative text quotes.
 
 ### C. Imagery Integration
-* Thematic assets generated with Nano Banana are integrated with subtle gradient vignettes (`to-transparent` overlays) so they integrate naturally into the interface instead of feeling like floating detached thumbnails.
+* 9 Nano Banana generative assets embedded across both the web application and `README.md`:
+  - `workforce_hero_visual.jpg`: Command center & neural acoustic lattice.
+  - `signal_divergence_matrix.jpg`: Rating vs. text divergence holographic prism.
+  - `topic_clusters_visual.jpg`: Six latent LDA topic clusters landscape.
+  - `world_editorial_intelligence.jpg` & `editorial_briefing_matrix.jpg`: World 1 Mockup Pair.
+  - `world_cybernetic_operations.jpg` & `cybernetic_telemetry_radar.jpg`: World 2 Mockup Pair.
+  - `world_biomorphic_voice.jpg` & `biomorphic_sentiment_sphere.jpg`: World 3 Mockup Pair.
 
 ### D. Governance & Limitations Protocol
 * Any temporal or sampling constraint is flagged with the amber friction warning pill (`bg-amber-500/10 border-amber-500/30 text-amber-400`).
 * No ungrounded statistical claims.
-
----
-
-## 5. Micro-Interactions & Transitions
-* Standard transition duration: `150ms ease-in-out` for hover states and button presses.
-* Tab transitions with subtle bottom indicator slide.
-* Dark / Light mode toggle persistence with instant class toggle on `document.documentElement`.

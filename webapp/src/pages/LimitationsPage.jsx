@@ -102,7 +102,7 @@ export default function LimitationsPage() {
           return (
             <div 
               key={i}
-              className="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-4 flex flex-col justify-between"
+              className="p-5 rounded-2xl world-card space-y-4 flex flex-col justify-between"
             >
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
@@ -141,7 +141,7 @@ export default function LimitationsPage() {
       </div>
 
       {/* Responsible AI Guidance for Enterprise Practitioners */}
-      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-3 text-xs leading-relaxed">
+      <div className="p-6 rounded-2xl world-card space-y-3 text-xs leading-relaxed">
         <h3 className="text-sm font-bold text-white font-heading">
           Guidelines for Enterprise People Analytics Teams
         </h3>

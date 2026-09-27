@@ -126,7 +126,7 @@ export default function MethodologyPage() {
       </div>
 
       {/* Visual Pipeline Flow */}
-      <div className="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 space-y-6">
+      <div className="p-6 rounded-2xl world-card space-y-6">
         
         <div className="flex items-center justify-between">
           <h2 className="text-base font-bold text-white font-heading">
@@ -200,7 +200,7 @@ export default function MethodologyPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-xs leading-relaxed">
             
             {/* WHAT */}
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2 flex flex-col justify-between">
+            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
               <div>
                 <div className="text-[11px] font-mono uppercase font-bold text-blue-400 flex items-center gap-1.5 mb-1.5">
                   <CheckCircle2 className="w-3.5 h-3.5" />
@@ -213,7 +213,7 @@ export default function MethodologyPage() {
             </div>
 
             {/* WHY */}
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2 flex flex-col justify-between">
+            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
               <div>
                 <div className="text-[11px] font-mono uppercase font-bold text-indigo-400 flex items-center gap-1.5 mb-1.5">
                   <ShieldCheck className="w-3.5 h-3.5" />
@@ -226,7 +226,7 @@ export default function MethodologyPage() {
             </div>
 
             {/* OUTPUT */}
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2 flex flex-col justify-between">
+            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
               <div>
                 <div className="text-[11px] font-mono uppercase font-bold text-emerald-400 flex items-center gap-1.5 mb-1.5">
                   <BarChart3 className="w-3.5 h-3.5" />
@@ -239,7 +239,7 @@ export default function MethodologyPage() {
             </div>
 
             {/* LIMITATION */}
-            <div className="p-4 rounded-xl bg-slate-900/60 border border-slate-800 space-y-2 flex flex-col justify-between">
+            <div className="p-4 rounded-xl world-card space-y-2 flex flex-col justify-between">
               <div>
                 <div className="text-[11px] font-mono uppercase font-bold text-amber-400 flex items-center gap-1.5 mb-1.5">
                   <Cpu className="w-3.5 h-3.5" />
