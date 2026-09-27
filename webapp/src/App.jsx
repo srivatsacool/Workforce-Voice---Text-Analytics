@@ -11,6 +11,7 @@ const CompanySignalsPage = lazy(() => import('./pages/CompanySignalsPage'));
 const MethodologyPage = lazy(() => import('./pages/MethodologyPage'));
 const InsightsPage = lazy(() => import('./pages/InsightsPage'));
 const LimitationsPage = lazy(() => import('./pages/LimitationsPage'));
+const WorldStudioPage = lazy(() => import('./pages/WorldStudioPage'));
 
 function PageLoader() {
   return (
@@ -24,7 +25,7 @@ function PageLoader() {
 export default function App() {
   const getInitialTab = () => {
     const hash = window.location.hash.replace('#', '');
-    const validTabs = ['landing', 'dashboard', 'sentiment', 'topics', 'companies', 'methodology', 'insights', 'limitations'];
+    const validTabs = ['landing', 'dashboard', 'sentiment', 'topics', 'companies', 'worlds', 'methodology', 'insights', 'limitations'];
     return validTabs.includes(hash) ? hash : 'landing';
   };
 
@@ -68,6 +69,7 @@ export default function App() {
           {activeTab === 'sentiment' && <SentimentExplorerPage />}
           {activeTab === 'topics' && <TopicExplorerPage />}
           {activeTab === 'companies' && <CompanySignalsPage />}
+          {activeTab === 'worlds' && <WorldStudioPage setActiveTab={setActiveTab} />}
           {activeTab === 'methodology' && <MethodologyPage />}
           {activeTab === 'insights' && <InsightsPage />}
           {activeTab === 'limitations' && <LimitationsPage />}

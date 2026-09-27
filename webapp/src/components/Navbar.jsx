@@ -12,7 +12,8 @@ import {
   Moon, 
   Menu, 
   X,
-  ExternalLink
+  ExternalLink,
+  Sparkles
 } from 'lucide-react';
 
 export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode }) {
@@ -24,6 +25,7 @@ export default function Navbar({ activeTab, setActiveTab, darkMode, setDarkMode 
     { id: 'sentiment', label: 'Sentiment', icon: HeartHandshake },
     { id: 'topics', label: 'Topics', icon: Layers },
     { id: 'companies', label: 'Company Signals', icon: Building2 },
+    { id: 'worlds', label: 'Design Worlds', icon: Sparkles },
     { id: 'methodology', label: 'Methodology', icon: Cpu },
     { id: 'insights', label: 'Executive Insights', icon: Lightbulb },
     { id: 'limitations', label: 'Limitations', icon: AlertTriangle },

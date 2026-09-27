@@ -392,23 +392,28 @@ export default function LandingPage({ setActiveTab }) {
         </div>
       </section>
 
-      {/* Quick Launchpad to Dashboard */}
+      {/* Design Worlds Studio Banner */}
       <section className="max-w-6xl mx-auto px-4">
-        <div className="p-8 rounded-2xl bg-slate-900/90 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+        <div className="p-8 rounded-2xl bg-gradient-to-r from-blue-950/80 via-indigo-950/60 to-slate-900 border border-blue-500/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
           <div className="space-y-2 max-w-xl text-center md:text-left">
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-medium bg-blue-500/20 text-blue-300 border border-blue-400/30">
+              <Sparkles className="w-3.5 h-3.5 text-blue-300" />
+              <span>IMPECCABLE AESTHETIC STUDIO</span>
+            </div>
             <h3 className="text-xl font-bold text-white font-heading">
-              Explore the Organizational Friction Matrix
+              Explore 3 Candidate Visual Universes
             </h3>
-            <p className="text-xs text-slate-400">
-              Cross-tabulate sentiment, ratings, and LDA topic distributions across 90 US employers with interactive multi-dimensional filters.
+            <p className="text-xs text-slate-300">
+              Compare Editorial Intelligence (Financial Times style), Cybernetic Operations Matrix (NASA telemetry style), and Biomorphic Neural Voice Canvas (acoustic bioluminescence).
             </p>
           </div>
 
           <button
-            onClick={() => { setActiveTab('dashboard'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-            className="px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-md transition-all cursor-pointer whitespace-nowrap"
+            onClick={() => { setActiveTab('worlds'); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
+            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-md transition-all cursor-pointer whitespace-nowrap"
           >
-            Launch Interactive Dashboard
+            <span>Open Design Worlds Studio</span>
+            <ArrowRight className="w-4 h-4" />
           </button>
         </div>
       </section>
