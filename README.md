@@ -107,7 +107,29 @@ The project leverages high-resolution conceptual and analytical imagery generate
 > 3. **Frontline Supervision & Leadership** (Managerial communication, fairness)
 > 4. **Team Culture Anchor** (Peer camaraderie, collegial support)
 > 5. **Career Mobility** (Internal advancement paths, training opportunities)
-> 6. **Work-Life Balance** (Burnout mitigation, flexibility)
+### 3. Candidate Visual Worlds for Webapp Revamp (Impeccable & Nano Banana)
+We designed three distinct, fully realized aesthetic universes using Impeccable design principles and Nano Banana AI image generation to explore the next generation of the web application:
+
+#### 🏛️ World 1: The Editorial Intelligence Gazette
+<div align="center">
+  <img src="outputs/figures/world_editorial_intelligence.jpg" alt="World 1: Editorial Intelligence Gazette UI Mockup" width="90%" />
+</div>
+
+> **Design Thesis:** An elite *Financial Times* / *Bloomberg* executive briefing deck aesthetic. Clean warm parchment ground, deep charcoal typography, serif display headers, dense tabular signal matrices, and razor-sharp hairline ruling lines.
+
+#### 🛰️ World 2: Cybernetic Deep Slate Operations Matrix
+<div align="center">
+  <img src="outputs/figures/world_cybernetic_operations.jpg" alt="World 2: Cybernetic Operations Matrix UI Mockup" width="90%" />
+</div>
+
+> **Design Thesis:** A high-density NASA mission control telemetry deck. Deep obsidian slate background, glowing ice-blue and cyan laser data streams, amber operational friction warnings, radar performance charts, and live acoustic sentiment waveform monitors.
+
+#### 🌊 World 3: Biomorphic Neural Voice Canvas
+<div align="center">
+  <img src="outputs/figures/world_biomorphic_voice.jpg" alt="World 3: Biomorphic Neural Voice Canvas UI Mockup" width="90%" />
+</div>
+
+> **Design Thesis:** An organic deep-tech acoustic canvas. Midnight abyssal blue ground, fluid bioluminescent cyan and violet neural soundwaves, frosted glassmorphic card containers, and human voice sentiment spotlights.
 
 ---
 
@@ -209,6 +231,11 @@ workforce-intelligence/
 * **Overall Rating Distribution:** Mean rating is **3.54 stars** (Median: 4.0). 55.6% of reviews are 4 or 5 stars, while 18.0% are 1 or 2 stars.
 * **Review Verbosity Asymmetry:** Disgruntled reviewers (1-star) write significantly longer narratives (**median 38 words**) than satisfied reviewers (**median 20 words**).
 
+<div align="center">
+  <img src="outputs/figures/01_rating_distribution.png" alt="Star Rating Distribution & Review Verbosity" width="48%" />
+  <img src="outputs/figures/02_missing_values_heatmap.png" alt="Data Hygiene & Missing Values Heatmap" width="48%" />
+</div>
+
 ### 2. Rule-Based Sentiment Analysis (VADER)
 * **Corpus Sentiment Breakdown:**
   * **Positive (Compound ≥ +0.05):** 78.2% (6,867 reviews, Avg Rating: 3.7⭐)
@@ -218,6 +245,11 @@ workforce-intelligence/
 * **The "Divergent Voice":**
   * **38.4% of 1-star reviews contain net-positive textual sentiment** (employees frequently praise colleagues or free meals before articulating severe governance complaints).
   * **8.2% of 5-star reviews contain net-negative textual sentiment** (constructive operational critique embedded within high-satisfaction loyalty).
+
+<div align="center">
+  <img src="outputs/figures/04_sentiment_distribution.png" alt="Sentiment Compound & Pros/Cons Distribution" width="48%" />
+  <img src="outputs/figures/05_sentiment_vs_rating_scatter_box.png" alt="Rating vs Sentiment Divergence Boxplot & Scatter" width="48%" />
+</div>
 
 ### 3. Supervised Sentiment Classification (TF-IDF + Logistic Regression)
 * **Formulation:** Binary satisfaction prediction (Negative: 1-2 stars vs Positive: 4-5 stars).
@@ -232,8 +264,17 @@ workforce-intelligence/
   * *Negative Drivers:* `poor` (-5.09), `terrible` (-4.00), `toxic` (-3.69), `horrible` (-3.65), `management` (-3.07), `lack` (-2.51), `overshadowed` (-2.38).
   * *Positive Drivers:* `supportive` (+3.02), `con` (+2.92), `sometimes` (+2.33), `slow` (+2.27), `amazing` (+2.21), `hard` (+2.09), `atmosphere` (+1.88), `opportunity` (+1.88).
 
+<div align="center">
+  <img src="outputs/figures/06_ml_confusion_matrix.png" alt="Balanced Logistic Regression Confusion Matrix" width="48%" />
+  <img src="outputs/figures/07_ml_top_coefficient_terms.png" alt="Top Predictive Sentiment Coefficients" width="48%" />
+</div>
+
 ### 4. Unsupervised Topic Modeling (LDA, k=6)
 Latent Dirichlet Allocation revealed 6 natural, statistically separated organizational themes:
+
+<div align="center">
+  <img src="outputs/figures/08_lda_topic_top_terms.png" alt="Top 12 Empirical Keywords for 6 LDA Topics" width="90%" />
+</div>
 
 | Topic Code | Discovered Workforce Theme | Prevalence Share | Reviews | Avg Rating | Avg Sentiment | Dominant Empirical Keywords |
 | :---: | :--- | :---: | :---: | :---: | :---: | :--- |
@@ -248,6 +289,11 @@ Latent Dirichlet Allocation revealed 6 natural, statistically separated organiza
 By cross-tabulating discovered topics against star ratings and sentiment tiers, two key organizational signals surface:
 1. **The Primary Cultural Anchor:** Topic 1 (Culture & Camaraderie) and Topic 4 (Career Growth) exhibit the highest positive sentiment shares (**84.6% and 86.9%**) and highest average ratings (**3.94⭐ and 3.74⭐**). Supportive peer relationships represent the most consistent positive workforce signal across all 90 employers.
 2. **The Primary Friction Signals:** Topic 3 (Management Quality) and Topic 5 (Operational Stress) carry the lowest average ratings (**3.01⭐ and 2.98⭐**) and highest negative sentiment concentrations (**25.7% and 29.2%**). Supervisory communication and operational workload strain represent the primary areas for operational investigation.
+
+<div align="center">
+  <img src="outputs/figures/09_workforce_signal_matrix.png" alt="Workforce Signal Matrix Heatmap" width="48%" />
+  <img src="outputs/figures/10_company_sentiment_vs_rating.png" alt="Company Sentiment vs Rating Cross-Plot" width="48%" />
+</div>
 
 ---
 
